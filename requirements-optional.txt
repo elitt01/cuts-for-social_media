@@ -1,3 +1,6 @@
-# Only needed for local PT-BR transcription. Rendering uses stdlib + system FFmpeg.
+# Only needed for local transcription (PT-BR default). Rendering uses stdlib + system FFmpeg.
 # Official source: https://github.com/SYSTRAN/faster-whisper
 faster-whisper>=1.1,<2
+# Tested compatibility: faster-whisper 1.2.1 uses av.open(metadata_errors=...),
+# which fails with PyAV 19.0.2. Keep the combination verified on real audio.
+av==16.1.0

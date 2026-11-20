@@ -1,6 +1,8 @@
-# Exemplos sintéticos
+# Exemplos
 
-Estes arquivos exercitam contratos e ferramentas. Não representam lives reais, tendências ou inspeções de pessoas. As declarações de candidatos são fictícias; o render usa padrão visual e tom sonoro gerados localmente.
+Os exemplos sintéticos abaixo exercitam contratos e ferramentas. Não representam lives reais, tendências ou inspeções de pessoas. As declarações de candidatos são fictícias; o render sintético usa padrão visual e tom sonoro gerados localmente.
+
+O arquivo [plano.gta6-trailer.json](plano.gta6-trailer.json) é um caso separado, com fonte oficial real. Consulte o [relatório do teste](../docs/teste-gta6.md) para obter a origem, preparar a mídia local e conhecer a revisão ainda pendente. Nenhuma mídia foi incluída no Git.
 
 ## Avaliador
 

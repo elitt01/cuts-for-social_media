@@ -16,9 +16,9 @@ Duração padrão: **15–30 segundos**. Outro pedido explícito prevalece. Como
 
 Uso previsto: **ChatGPT Work e computador local**. Para usar no **Claude**, envie o link do repositório junto com o pedido e siga o [guia de execução](docs/execucao.md). As instruções são compartilhadas; a execução depende das ferramentas e do acesso disponíveis em cada sessão.
 
-**Estado: briefing fechado e ferramentas básicas implementadas.** Há scripts para pontuação de candidatos, inspeção de mídia e render com legendas, testados com dados e mídia sintéticos. A transcrição PT-BR é opcional e depende de faster-whisper/modelo; a inferência real ainda não foi executada nesta rodada. A pesquisa de tendências, a inspeção do conteúdo e as escolhas editoriais continuam a cargo do agente.
+**Estado: versão 0.3.0, com ferramentas básicas e primeiro teste de edição em mídia real.** Há scripts para pontuação de candidatos, inspeção de mídia e render com legendas; 32 testes automatizados passaram. O [teste de GTA 6](docs/teste-gta6.md) produziu 23,5s em 1080×1920 a partir de um trailer oficial. A transcrição local é opcional, com português por padrão e opções inglês/automático; a inferência de reconhecimento de fala ainda não foi executada. A pesquisa de tendências, a inspeção do conteúdo e as escolhas editoriais continuam a cargo do agente.
 
-O pacote está organizado para uso a partir do repositório. Não houve instalação de plugin nem execução de uma sessão do Claude. O render técnico mantém revisão audiovisual pendente; não equivale a um corte real já aprovado.
+O pacote está organizado para uso a partir do repositório. Não houve instalação de plugin nem execução de uma sessão do Claude. O teste real tem verificação técnica e inspeção de quadros; a revisão integral com áudio permanece pendente. O arquivo foi preparado para avaliação do usuário, sem comprovação de alcance viral.
 
 ## Começar
 
@@ -61,11 +61,12 @@ A nota de potencial é uma heurística editorial, nunca uma probabilidade de vir
 | [Briefing](docs/briefing.md) | Decisões confirmadas e suposições reversíveis |
 | [Roadmap](docs/roadmap.md) | O que existe e o que falta implementar |
 | [Validação](docs/validacao.md) | Testes executados, exemplo renderizado e limites da evidência |
+| [Teste GTA 6](docs/teste-gta6.md) | Fonte oficial, receita, resultado e melhorias do primeiro teste real |
 | [Configuração inicial](config/brief.example.json) | Defaults prontos; preencher o material e o tema da tarefa |
 | [Decisões do projeto](config/project.json) | Política de vários nichos confirmada pelo usuário |
 | [Ficha de referência](templates/referencia.example.json) | Registro de um vídeo realmente inspecionado |
 | [Plano de corte](templates/plano.example.json) | Contrato inicial para fonte, timeline, edição e QA |
-| [Exemplos sintéticos](examples/README.md) | Conferir seleção e render com material gerado localmente |
+| [Exemplos](examples/README.md) | Testes sintéticos e plano do teste com trailer oficial |
 
 ## Edição baseada em evidências
 
@@ -79,7 +80,7 @@ Orientações de publicidade do TikTok estão identificadas como publicidade. N�
 
 ## Ferramentas e limites
 
-Base atual: Python + FFmpeg/ffprobe. O render aceita cortes múltiplos, crop em pixels, exportação vertical, ASS/SRT e um manifesto técnico. faster-whisper é opcional para transcrição local. Download de lives, rastreamento de rosto, layouts de câmera+jogo, inserção de memes, trilha e efeitos não são automatizados pela CLI atual; o agente precisa usar ferramentas adicionais para esses elementos. Pedidos não suportados pela CLI devem gerar erro claro, sem ignorar elementos da edição.
+Base atual: Python + FFmpeg/ffprobe. O render aceita cortes múltiplos, crop em pixels, exportação vertical, quadro completo com fundo desfocado (`contain_blur`), ASS/SRT e um manifesto técnico. faster-whisper é opcional para transcrição local; a combinação testada fixa PyAV 16.1.0. Download de lives, rastreamento de rosto, layouts de câmera+jogo, inserção de memes, trilha e efeitos não são automatizados pela CLI atual; o agente precisa usar ferramentas adicionais para esses elementos. Pedidos não suportados pela CLI devem gerar erro claro, sem ignorar elementos da edição.
 
 yt-dlp e Remotion são opções documentadas para evoluir ingestão e composição. Não há servidor MCP nem serviço pago obrigatório. As dependências e modelos não são instalados pelo preflight.
 

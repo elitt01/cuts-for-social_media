@@ -1,0 +1,95 @@
+{
+  "schema_version": "0.1.0",
+  "run_id": "gta6-official-test-20261120",
+  "duration_target_seconds": {
+    "min": 15,
+    "max": 30
+  },
+  "source": {
+    "page_url": "https://www.rockstargames.com/VI/media/videos",
+    "media_url": "https://media-rockstargames-com.akamaized.net/VI/downloads/videos/GTAVI_Out_Now/GTAVI_Out_Now.mp4",
+    "creator": "Rockstar Games",
+    "type": "official_trailer",
+    "scope": "private_editing_test",
+    "context_reviewed": {
+      "video": "frames_sampled",
+      "audio": "signal_and_vad_only",
+      "full_watch_with_audio_done": false
+    }
+  },
+  "narrative": {
+    "hook": "GTA6 chegou: primeira imagem útil sem a introdução escura",
+    "context": "Montagem editorial identificada de imagens oficiais",
+    "payoff": "Logo nativo do jogo e pergunta final ao espectador"
+  },
+  "editing": {
+    "source_files": [
+      {
+        "id": "official",
+        "path": "../media/gta6-out-now-source.mp4"
+      }
+    ],
+    "segments": [
+      {
+        "source_id": "official",
+        "source_in_seconds": 2.7,
+        "source_out_seconds": 26.2
+      }
+    ],
+    "captions_output_timeline": [
+      {
+        "start_seconds": 0,
+        "end_seconds": 4,
+        "text": "GTA 6 chegou.\nE não veio discreto.",
+        "highlight_word": "GTA 6"
+      },
+      {
+        "start_seconds": 4,
+        "end_seconds": 8.5,
+        "text": "Vice City:\nluxo de um lado...",
+        "highlight_word": "Vice City"
+      },
+      {
+        "start_seconds": 8.5,
+        "end_seconds": 13.7,
+        "text": "...e caos\ndo outro.",
+        "highlight_word": "caos"
+      },
+      {
+        "start_seconds": 13.7,
+        "end_seconds": 18.4,
+        "text": "Festa, ação\ne uma cidade viva."
+      },
+      {
+        "start_seconds": 18.4,
+        "end_seconds": 23.5,
+        "text": "Qual cena\nte pegou mais?",
+        "highlight_word": "Qual cena"
+      }
+    ],
+    "caption_origin": "editorial_not_transcript",
+    "crops": [],
+    "overlays": [],
+    "audio_assets": [],
+    "output": {
+      "width": 1080,
+      "height": 1920,
+      "fps": 30,
+      "video_codec": "h264",
+      "audio_codec": "aac",
+      "pixel_format": "yuv420p",
+      "fit_mode": "contain_blur"
+    }
+  },
+  "qa": {
+    "technical_checks": [],
+    "full_watch_with_audio_done": false,
+    "captions_type": "editorial_text_not_spoken_transcription",
+    "context_fidelity": "official_source_identified"
+  },
+  "delivery": {
+    "requested": true,
+    "publish": false,
+    "status": "example_not_delivered"
+  }
+}

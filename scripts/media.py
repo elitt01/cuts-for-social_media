@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+from fractions import Fraction
 import hashlib
 import importlib.util
 import json
@@ -168,8 +169,10 @@ Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
     return header + "\n".join(lines) + "\n"
 
 
-def transcribe(path, output, *, model=None, model_dir=None, allow_download=False):
+def transcribe(path, output, *, model=None, model_dir=None, allow_download=False, language="pt"):
     path = local_file(str(path))
+    if language not in ("pt", "en", "auto"):
+        raise MediaError("language deve ser pt, en ou auto.")
     target = Path(output).resolve()
     if target.exists():
         raise MediaError(f"Saída já existe: {target}")
@@ -187,10 +190,10 @@ def transcribe(path, output, *, model=None, model_dir=None, allow_download=False
         if not allow_download:
             raise MediaError("Informe --model-dir com um modelo local, ou --allow-model-download para autorizar baixar o modelo indicado.")
     engine = WhisperModel(model_value, device="cpu", compute_type="int8", local_files_only=not allow_download)
-    segments, info = engine.transcribe(str(path), language="pt", word_timestamps=True, vad_filter=True)
+    segments, info = engine.transcribe(str(path), language=None if language == "auto" else language, word_timestamps=True, vad_filter=True)
     data = {"schema_version": "0.1.0", "source_file": str(path), "language": info.language,
             "time_reference": "input_file", "source_offset_seconds": 0,
-            "engine": "faster-whisper", "model": model_value, "review_status": "pending", "segments": []}
+            "engine": "faster-whisper", "model": model_value, "requested_language": language, "review_status": "pending", "segments": []}
     for segment in segments:
         data["segments"].append({"start_seconds": segment.start, "end_seconds": segment.end, "text": segment.text,
             "words": [{"start_seconds": w.start, "end_seconds": w.end, "text": w.word, "probability": w.probability}
@@ -232,6 +235,9 @@ def render(plan_path, output_dir, *, overwrite=False):
     width, height = int(width), int(height)
     fps_value = output.get("fps", 30)
     fps = number(30 if fps_value is None else fps_value, "FPS", minimum=1, maximum=120)
+    fit_mode = output.get("fit_mode", "cover")
+    if fit_mode not in ("cover", "contain_blur"):
+        raise MediaError("editing.output.fit_mode deve ser cover ou contain_blur.")
     if output.get("video_codec", "h264") not in ("h264", "libx264") or output.get("audio_codec", "aac") != "aac" or output.get("pixel_format", "yuv420p") != "yuv420p":
         raise MediaError("Esta V1 exporta apenas H264/AAC/yuv420p.")
     sources, source_order = {}, []
@@ -244,9 +250,15 @@ def render(plan_path, output_dir, *, overwrite=False):
         if not videos:
             raise MediaError(f"Fonte sem stream de vídeo: {source_path}")
         duration = number(float(metadata.get("format", {}).get("duration", 0)), "Duração da fonte", minimum=0.001)
+        sar_text = videos[0].get("sample_aspect_ratio")
+        try:
+            sar = 1.0 if sar_text in (None, "N/A", "0:1", "0/1") else float(Fraction(sar_text.replace(":", "/")))
+        except (ValueError, TypeError, ZeroDivisionError, AttributeError) as exc:
+            raise MediaError(f"Sample aspect ratio inválido: {sar_text}") from exc
+        sar = number(sar, "Sample aspect ratio", minimum=0.000001)
         audios = [s for s in metadata["streams"] if s["codec_type"] == "audio"]
         sources[item["id"]] = {"path": source_path, "index": len(source_order), "duration": duration,
-            "video": videos[0], "audio": audios[0] if audios else None, "has_audio": bool(audios)}
+            "video": videos[0], "sar": sar, "audio": audios[0] if audios else None, "has_audio": bool(audios)}
         source_order.append(item["id"])
     crop_items = editing.get("crops") or []
     if not isinstance(crop_items, list):
@@ -286,9 +298,21 @@ def render(plan_path, output_dir, *, overwrite=False):
         # Autocenter is geometric, not face/speaker tracking.
         # Preserve each stream's timestamp relative to the same segment origin.
         # Independent PTS-STARTPTS would erase a delayed audio stream's offset.
-        vf = (f"[{source['index']}:{source['video']['index']}]trim=start={start:g}:end={end:g},setpts=PTS-{start:g}/TB,"
-              f"{crop_filter}scale={width}:{height}:force_original_aspect_ratio=increase,"
-              f"crop={width}:{height},setsar=1,fps=fps={fps:g}:start_time=0,tpad=stop_mode=clone:stop_duration={2/fps:.9f},"
+        # Crop coordinates belong to source pixels. Then normalize their display
+        # aspect before either layout so setsar=1 cannot deform anamorphic media.
+        square_pixels = (f"scale=w='max(2,round(iw*{source['sar']:.12g}/2)*2)':h=ih,setsar=1,"
+                         if abs(source["sar"] - 1) > 1e-9 else "setsar=1,")
+        source_filter = (f"[{source['index']}:{source['video']['index']}]trim=start={start:g}:end={end:g},"
+                         f"setpts=PTS-{start:g}/TB,{crop_filter}{square_pixels}")
+        if fit_mode == "contain_blur":
+            filters.append(source_filter + f"split=2[bgsrc{i}][fgsrc{i}]")
+            filters.append(f"[bgsrc{i}]scale={width}:{height}:force_original_aspect_ratio=increase,"
+                           f"crop={width}:{height},setsar=1,gblur=sigma=20:steps=1,eq=brightness=-0.10:saturation=0.85[bg{i}]")
+            filters.append(f"[fgsrc{i}]scale={width}:{height}:force_original_aspect_ratio=decrease,setsar=1[fg{i}]")
+            layout_filter = f"[bg{i}][fg{i}]overlay=x=(W-w)/2:y=(H-h)/2:shortest=1,"
+        else:
+            layout_filter = source_filter + f"scale={width}:{height}:force_original_aspect_ratio=increase,crop={width}:{height},setsar=1,"
+        vf = (layout_filter + f"fps=fps={fps:g}:start_time=0,tpad=stop_mode=clone:stop_duration={2/fps:.9f},"
               f"trim=end_frame={output_frames},setpts=N/({fps:g}*TB),format=yuv420p[v{i}]")
         filters.append(vf)
         if source["has_audio"]:
@@ -344,10 +368,11 @@ def render(plan_path, output_dir, *, overwrite=False):
         manifest = {"schema_version": "0.1.0", "run_id": plan.get("run_id"), "status": "technically_verified/audiovisual_pending",
                     "plan_path": str(plan_path), "expected_duration_seconds": duration, "actual_duration_seconds": actual_duration,
                     "time_mapping": timeline, "caption_time_reference": "output", "caption_count": len(captions),
+                    "fit_mode": fit_mode,
                     "outputs": files, "checksums_sha256": {name: sha256_file(temporary/name) for name in targets[:3]},
                     "technical_probe": metadata, "audiovisual_review": {"status": "pending", "full_watch_with_audio_done": False,
                     "context_fidelity": "not_checked", "caption_accuracy": "not_checked", "mobile_readability": "not_checked"},
-                    "delivery": {"status": "not_delivered"}, "limitations": ["Crop central geométrico; sem rastreamento de rostos.",
+                    "delivery": {"status": "not_delivered"}, "limitations": ["Layout geométrico; sem rastreamento de rostos.",
                     "Sem seleção semântica, memes, música ou efeitos automáticos.", "Legendas precisam estar na timeline final e ser revisadas."]}
         write_json(temporary / "render-manifest.json", manifest)
         for name in targets:
@@ -362,12 +387,13 @@ def main(argv=None):
     p = subs.add_parser("probe", help="Inspeciona um arquivo local")
     p.add_argument("input")
     p.add_argument("--output")
-    p = subs.add_parser("transcribe", help="Transcreve PT-BR em CPU, com faster-whisper opcional")
+    p = subs.add_parser("transcribe", help="Transcreve em CPU, com idioma selecionável e faster-whisper opcional")
     p.add_argument("input")
     p.add_argument("--output", required=True)
     p.add_argument("--model")
     p.add_argument("--model-dir")
     p.add_argument("--allow-model-download", action="store_true")
+    p.add_argument("--language", choices=("pt", "en", "auto"), default="pt")
     p = subs.add_parser("render", help="Renderiza um plano; revisão audiovisual fica pendente")
     p.add_argument("plan")
     p.add_argument("--output-dir", required=True)
@@ -386,7 +412,7 @@ def main(argv=None):
                 write_json(target, result)
         elif args.command == "transcribe":
             result = transcribe(args.input, args.output, model=args.model, model_dir=args.model_dir,
-                                allow_download=args.allow_model_download)
+                                allow_download=args.allow_model_download, language=args.language)
         else:
             result = render(args.plan, args.output_dir, overwrite=args.overwrite)
         print(json.dumps(result, ensure_ascii=False, indent=2, allow_nan=False))

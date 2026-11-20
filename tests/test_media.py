@@ -9,6 +9,7 @@ import subprocess
 import sys
 import struct
 import tempfile
+from types import SimpleNamespace
 import unittest
 from unittest import mock
 
@@ -84,6 +85,51 @@ class MediaTests(unittest.TestCase):
         self.plan["editing"]["crops"] = [{"segment_index": 0, "x": 0, "y": 0, "width": 160, "height": 90}]
         result = media.render(self.save(), self.case_dir / "out")
         self.assertAlmostEqual(result["actual_duration_seconds"], 15, delta=0.2)
+
+    def test_contain_blur_preserves_both_edges_after_explicit_crop(self):
+        source = self.case_dir / "edge-markers.mp4"
+        media.run(["ffmpeg", "-v", "error", "-nostdin", "-y", "-f", "lavfi", "-i", "color=c=blue:s=320x90:r=10:d=1",
+                   "-vf", "drawbox=x=80:y=0:w=20:h=ih:color=red:t=fill,drawbox=x=220:y=0:w=20:h=ih:color=lime:t=fill",
+                   "-c:v", "libx264", "-pix_fmt", "yuv420p", str(source)])
+        self.plan["editing"]["source_files"][0]["path"] = str(source)
+        self.plan["editing"]["segments"] = [{"source_id": "live", "source_in_seconds": 0, "source_out_seconds": 1,
+                                              "crop": {"x": 80, "y": 0, "width": 160, "height": 90}}]
+        self.plan["editing"]["captions_output_timeline"] = []
+        self.plan["editing"]["output"]["fit_mode"] = "contain_blur"
+        result = media.render(self.save(), self.case_dir / "out")
+        self.assertEqual(result["fit_mode"], "contain_blur")
+        video = next(s for s in result["technical_probe"]["streams"] if s["codec_type"] == "video")
+        self.assertEqual((video["width"], video["height"]), (90, 160))
+        for x, dominant in ((2, 0), (86, 1)):
+            decoded = subprocess.run(["ffmpeg", "-v", "error", "-ss", "0.5", "-i", result["outputs"]["clip.mp4"],
+                                      "-frames:v", "1", "-vf", f"crop=2:2:{x}:80,format=rgb24", "-f", "rawvideo", "pipe:1"],
+                                     capture_output=True, check=True)
+            self.assertGreater(decoded.stdout[dominant], 180)
+            self.assertLess(decoded.stdout[2], 60)
+
+    def test_contain_blur_normalizes_non_square_pixels_before_layout(self):
+        source = self.case_dir / "anamorphic.mp4"
+        media.run(["ffmpeg", "-v", "error", "-nostdin", "-y", "-f", "lavfi", "-i", "color=c=white:s=160x90:r=10:d=1",
+                   "-vf", "setsar=2/1", "-c:v", "libx264", "-pix_fmt", "yuv420p", str(source)])
+        metadata = media.probe(source)
+        self.assertEqual(metadata["streams"][0]["sample_aspect_ratio"], "2:1")
+        self.plan["editing"]["source_files"][0]["path"] = str(source)
+        self.plan["editing"]["segments"] = [{"source_id": "live", "source_in_seconds": 0, "source_out_seconds": 1}]
+        self.plan["editing"]["captions_output_timeline"] = []
+        self.plan["editing"]["output"]["fit_mode"] = "contain_blur"
+        result = media.render(self.save(), self.case_dir / "out")
+        video = next(s for s in result["technical_probe"]["streams"] if s["codec_type"] == "video")
+        self.assertEqual(video["sample_aspect_ratio"], "1:1")
+        decoded = subprocess.run(["ffmpeg", "-v", "error", "-ss", "0.5", "-i", result["outputs"]["clip.mp4"],
+                                  "-frames:v", "1", "-pix_fmt", "rgb24", "-f", "rawvideo", "pipe:1"],
+                                 capture_output=True, check=True)
+        # 160x90 with SAR2:1 displays as320x90 (32:9). At output width90,
+        # the preserved white foreground is about25px tall, not50px (16:9).
+        pixels = decoded.stdout
+        bright_rows = [y for y in range(160) if min(pixels[(y*90+45)*3:(y*90+45)*3+3]) > 245]
+        self.assertGreaterEqual(len(bright_rows), 22)
+        self.assertLessEqual(len(bright_rows), 28)
+        self.assertIn(80, bright_rows)
 
     def test_fractional_cuts_map_to_real_output_frames(self):
         self.plan["editing"]["segments"] = [
@@ -161,6 +207,7 @@ class MediaTests(unittest.TestCase):
         p = copy.deepcopy(self.plan); p["editing"]["overlays"] = [{"text": "não ignorar"}]; invalid.append(p)
         p = copy.deepcopy(self.plan); p["editing"]["output"]["width"] = 91; invalid.append(p)
         p = copy.deepcopy(self.plan); p["editing"]["output"]["fps"] = 0; invalid.append(p)
+        p = copy.deepcopy(self.plan); p["editing"]["output"]["fit_mode"] = "invalid"; invalid.append(p)
         p = copy.deepcopy(self.plan); p["editing"]["source_files"][0]["path"] = "https://example.com/video.mp4"; invalid.append(p)
         p = copy.deepcopy(self.plan); p["editing"]["segments"][0]["source_in_seconds"] = float("nan"); invalid.append(p)
         for i, plan in enumerate(invalid):
@@ -206,6 +253,19 @@ class MediaTests(unittest.TestCase):
             with self.assertRaisesRegex(media.MediaError, "Saída já existe"):
                 media.transcribe(self.source, target, model="small", allow_download=True)
         self.assertEqual(target.read_text(), "preserve")
+
+    def test_transcription_language_options_are_forwarded_without_network(self):
+        for language, expected in (("pt", "pt"), ("en", "en"), ("auto", None)):
+            factory = mock.Mock()
+            factory.return_value.transcribe.return_value = (iter([]), SimpleNamespace(language="en"))
+            with mock.patch.dict(sys.modules, {"faster_whisper": SimpleNamespace(WhisperModel=factory)}):
+                result = media.transcribe(self.source, self.case_dir / f"{language}.json", model_dir=self.case_dir, language=language)
+            self.assertEqual(factory.return_value.transcribe.call_args.kwargs["language"], expected)
+            self.assertTrue(factory.call_args.kwargs["local_files_only"])
+            data = json.loads(Path(result["transcript_path"]).read_text())
+            self.assertEqual(data["requested_language"], language)
+        with self.assertRaisesRegex(media.MediaError, "language deve ser"):
+            media.transcribe(self.source, self.case_dir / "invalid-language.json", language="xx")
 
     def test_ass_literal_text_cannot_inject_override_commands(self):
         text = media.ass_text([{"start_seconds": 0, "end_seconds": 1, "text": r"{\\pos(0,0)}Olá", "highlight_word": None}], 90, 160)

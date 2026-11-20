@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "cortes-virais-br",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Instruções e ferramentas básicas para pesquisa, seleção e edição de cortes de lives em português brasileiro, com duração padrão de 15–30 segundos.",
   "author": { "name": "Rafael" },
   "extensions": {
