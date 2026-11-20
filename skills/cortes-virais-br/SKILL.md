@@ -13,9 +13,13 @@ Ler a configuração do usuário quando existir. Respeitar a política confirmad
 
 Consultar [seleção](references/selecao.md) para descoberta/ranking, [edição](references/edicao-br.md) para estilo/legendas e [ferramentas](references/ferramentas.md) para execução, contratos e QA. Carregar apenas o necessário.
 
+Para a operação do repositório, ler [START_HERE.md](../../START_HERE.md). As ferramentas executáveis e seus contratos estão em [mídia](../../docs/ferramentas-cli.md) e [seleção](../../docs/selecao-cli.md); usar a raiz que contém config/project.json como diretório de trabalho.
+
 ## 1. Definir briefing e capacidade
 
 Identificar tema/nicho da tarefa, público, plataformas, fontes, quantidade, duração, estilo e local de entrega conforme o pedido. Separar respostas do usuário de defaults experimentais.
+
+O briefing do projeto está fechado. Adotar duração de 15–30 segundos quando o pedido não especificar outra; selecionar um arco completo que caiba nessa faixa. Como defaults reversíveis, produzir um corte por pedido, usar identidade visual neutra e entregar na sessão atual ou pasta local de saída. Não voltar a perguntar essas escolhas apenas porque os campos específicos de uma nova tarefa ainda não foram preenchidos.
 
 Adotar TikTok, Instagram Reels e YouTube Shorts como destinos confirmados, salvo escopo diferente em uma tarefa. Conferir requisitos e interface atuais de cada destino; manter um master e produzir variantes quando houver diferença real de enquadramento, legendas, áudio ou assets. Não exigir novamente a escolha de plataforma nem presumir licença de música válida entre plataformas.
 
@@ -43,6 +47,8 @@ Identificar gancho → contexto mínimo → desenvolvimento → desfecho. Descre
 
 Usar a matriz heurística versionada da referência de seleção. Justificar cada nota com observação/timecode. Manter intervalo e cobertura quando houver critérios desconhecidos; não preencher com zero nem apresentar nota como probabilidade.
 
+Quando as fichas estiverem preenchidas, usar scripts/score_candidates.py para conferir a nota, a cobertura e a escolha determinística. A CLI valida declarações estruturadas: não assiste à fonte nem comprova as evidências. Preencher context_reviewed.mode=audiovisual somente após inspeção audiovisual real.
+
 Separar a nota de potencial das métricas observadas. Comparar tração com contexto equivalente; não inferir retenção de vídeos de terceiros. Escolher a quantidade pedida e apresentar motivos e limitações de forma breve quando fizer parte do pedido.
 
 Seguir o fluxo automático confirmado: escolher o melhor trecho entre os candidatos viáveis, editar, revisar e entregar o arquivo pronto. Fazer comparação e planejamento internamente, sem criar uma aprovação intermediária de candidatos. Mostrar opções antes de editar apenas se o usuário pedir. Se nenhum candidato viável for encontrado, ampliar a pesquisa dentro do escopo e relatar um impedimento concreto quando necessário; não substituir a entrega por uma promessa de viralidade.
@@ -53,6 +59,8 @@ Aplicar a política confirmada: adaptar a edição ao clipe e usar memes/efeitos
 
 Estudar referências audiovisuais reais do nicho e formato escolhidos para aquela tarefa antes de afirmar que reproduz um estilo. Manter fichas por tipo de conteúdo, sem transferir automaticamente ritmo e efeitos de gameplay para entrevista ou notícia. Registrar técnicas e timing; extrair parâmetros próprios sem copiar identidade ou inventar nomes de fontes tipográficas.
 
+Consultar a [amostra visual observada](../../docs/referencias-observadas.md) como ponto de partida. Ela usa quadros públicos e mantém áudio/reprodução integral pendentes; não a tratar como referência audiovisual já revisada ou prova de preferência do público.
+
 Usar presets conversa, humor ou gameplay como defaults experimentais, refinando-os com referências realmente inspecionadas para a tarefa. O agente pode selecionar essas referências; não exigir aprovação de estilo em cada corte. Preservar ação e reação. Usar zoom, meme, música e texto quando contribuírem para compreensão ou efeito narrativo.
 
 Transcrever PT-BR, revisar nomes/gírias/negações e sincronizar na timeline de saída. Conservar a transcrição bruta e o mapeamento de cortes para corrigir sincronismo.
@@ -60,6 +68,8 @@ Transcrever PT-BR, revisar nomes/gírias/negações e sincronizar na timeline de
 ## 6. Renderizar e conferir
 
 Definir plano com entradas/saídas, crops, legendas, assets e áudio. Usar ferramentas realmente instaladas e registrar versões. Não transformar pseudocódigo em alegação de execução.
+
+Usar scripts/media.py preflight/probe e render conforme o contrato documentado. A ferramenta atual corta, concatena, enquadra geometricamente e aplica ASS/SRT; transcrição é opcional. Para efeitos, memes, trilha ou layouts não suportados, aplicar ferramentas adicionais disponíveis e validar o resultado, sem prometer que a CLI implementa esses elementos. Registrar o mapeamento por frames gerado pelo render e alinhar as legendas à saída real.
 
 Gerar MP4 e legenda revisada quando solicitado. Verificar reprodução, streams, duração e codecs; assistir e ouvir integralmente o exportado, conferir celular/interface, começo, final e contexto. Registrar explicitamente `not_checked` quando uma revisão não puder ser feita.
 

@@ -1,0 +1,161 @@
+{
+  "synthetic": true,
+  "description": "Exemplo fictício de contrato; fontes e inspeções declaradas existem somente no cenário de teste. Não usar como material para render ou como recomendação real.",
+  "candidates": [
+    {
+      "candidate_id": "a-completo-75",
+      "source_file": "material-ficticio-nao-existente.mp4",
+      "source_start_seconds": 10,
+      "source_end_seconds": 30,
+      "context_reviewed": {
+        "start_seconds": 0,
+        "end_seconds": 45,
+        "mode": "audiovisual"
+      },
+      "potential": {
+        "criteria": {
+          "gancho": {
+            "score": 3,
+            "evidence": "Cenário fictício para testar a lógica; nenhuma inspeção real é alegada.",
+            "timecode_seconds": 10
+          },
+          "desfecho": {
+            "score": 3,
+            "evidence": "Cenário fictício para testar a lógica; nenhuma inspeção real é alegada.",
+            "timecode_seconds": 12
+          },
+          "compreensao": {
+            "score": 3,
+            "evidence": "Cenário fictício para testar a lógica; nenhuma inspeção real é alegada.",
+            "timecode_seconds": 14
+          },
+          "adequacao": {
+            "score": 3,
+            "evidence": "Cenário fictício para testar a lógica; nenhuma inspeção real é alegada.",
+            "timecode_seconds": 16
+          },
+          "relevancia": {
+            "score": 3,
+            "evidence": "Cenário fictício para testar a lógica; nenhuma inspeção real é alegada.",
+            "timecode_seconds": 18
+          },
+          "novidade": {
+            "score": 3,
+            "evidence": "Cenário fictício para testar a lógica; nenhuma inspeção real é alegada.",
+            "timecode_seconds": 20
+          },
+          "viabilidade": {
+            "score": 3,
+            "evidence": "Cenário fictício para testar a lógica; nenhuma inspeção real é alegada.",
+            "timecode_seconds": 22
+          }
+        }
+      },
+      "observed_performance": {
+        "snapshots": []
+      }
+    },
+    {
+      "candidate_id": "b-incompleto",
+      "source_file": "material-ficticio-nao-existente.mp4",
+      "source_start_seconds": 10,
+      "source_end_seconds": 30,
+      "context_reviewed": {
+        "start_seconds": 0,
+        "end_seconds": 45,
+        "mode": "audiovisual"
+      },
+      "potential": {
+        "criteria": {
+          "gancho": {
+            "score": 3,
+            "evidence": "Cenário fictício para testar a lógica; nenhuma inspeção real é alegada.",
+            "timecode_seconds": 10
+          },
+          "desfecho": null,
+          "compreensao": {
+            "score": 3,
+            "evidence": "Cenário fictício para testar a lógica; nenhuma inspeção real é alegada.",
+            "timecode_seconds": 14
+          },
+          "adequacao": {
+            "score": 3,
+            "evidence": "Cenário fictício para testar a lógica; nenhuma inspeção real é alegada.",
+            "timecode_seconds": 16
+          },
+          "relevancia": {
+            "score": 3,
+            "evidence": "Cenário fictício para testar a lógica; nenhuma inspeção real é alegada.",
+            "timecode_seconds": 18
+          },
+          "novidade": {
+            "score": 3,
+            "evidence": "Cenário fictício para testar a lógica; nenhuma inspeção real é alegada.",
+            "timecode_seconds": 20
+          },
+          "viabilidade": {
+            "score": 3,
+            "evidence": "Cenário fictício para testar a lógica; nenhuma inspeção real é alegada.",
+            "timecode_seconds": 22
+          }
+        }
+      },
+      "observed_performance": {
+        "snapshots": []
+      }
+    },
+    {
+      "candidate_id": "c-bloqueado-por-gancho",
+      "source_file": "material-ficticio-nao-existente.mp4",
+      "source_start_seconds": 10,
+      "source_end_seconds": 30,
+      "context_reviewed": {
+        "start_seconds": 0,
+        "end_seconds": 45,
+        "mode": "audiovisual"
+      },
+      "potential": {
+        "criteria": {
+          "gancho": {
+            "score": 1,
+            "evidence": "Cenário fictício para testar a lógica; nenhuma inspeção real é alegada.",
+            "timecode_seconds": 10
+          },
+          "desfecho": {
+            "score": 4,
+            "evidence": "Cenário fictício para testar a lógica; nenhuma inspeção real é alegada.",
+            "timecode_seconds": 12
+          },
+          "compreensao": {
+            "score": 4,
+            "evidence": "Cenário fictício para testar a lógica; nenhuma inspeção real é alegada.",
+            "timecode_seconds": 14
+          },
+          "adequacao": {
+            "score": 4,
+            "evidence": "Cenário fictício para testar a lógica; nenhuma inspeção real é alegada.",
+            "timecode_seconds": 16
+          },
+          "relevancia": {
+            "score": 4,
+            "evidence": "Cenário fictício para testar a lógica; nenhuma inspeção real é alegada.",
+            "timecode_seconds": 18
+          },
+          "novidade": {
+            "score": 4,
+            "evidence": "Cenário fictício para testar a lógica; nenhuma inspeção real é alegada.",
+            "timecode_seconds": 20
+          },
+          "viabilidade": {
+            "score": 4,
+            "evidence": "Cenário fictício para testar a lógica; nenhuma inspeção real é alegada.",
+            "timecode_seconds": 22
+          }
+        }
+      },
+      "observed_performance": {
+        "snapshots": []
+      }
+    }
+  ]
+}

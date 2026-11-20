@@ -1,6 +1,6 @@
 # Cuts for Social Media
 
-Plugin em desenvolvimento: **Cortes Virais BR**. Repositório: [elitt01/cuts-for-social_media](https://github.com/elitt01/cuts-for-social_media).
+Projeto: **Cortes Virais BR**. Repositório: [elitt01/cuts-for-social_media](https://github.com/elitt01/cuts-for-social_media). Entrada para agentes: [START_HERE.md](START_HERE.md).
 
 Base de instruções e pesquisa para um agente descobrir momentos de lives, avaliar seu potencial, editar cortes em português brasileiro e entregar o vídeo quando solicitado.
 
@@ -12,9 +12,25 @@ Fluxo confirmado: **escolher o melhor trecho → editar → revisar → entregar
 
 Edição confirmada: **adaptar ao clipe, usando memes e efeitos quando ajudarem**. O agente pesquisa referências por conta própria e também pode usar exemplos enviados pelo usuário; a intensidade deve preservar fala, contexto e desfecho.
 
+Duração padrão: **15–30 segundos**. Outro pedido explícito prevalece. Como padrões reversíveis, adotar um corte por pedido, identidade neutra e entrega na sessão atual ou pasta local.
+
 Uso previsto: **ChatGPT Work e computador local**. Para usar no **Claude**, envie o link do repositório junto com o pedido e siga o [guia de execução](docs/execucao.md). As instruções são compartilhadas; a execução depende das ferramentas e do acesso disponíveis em cada sessão.
 
-**Estado: briefing em construção.** Este repositório contém um pacote de instruções em rascunho e referências pesquisadas em 20/11/2026. Não há plugin instalado, busca automatizada, pipeline de render implementado ou corte real validado nesta versão.
+**Estado: briefing fechado e ferramentas básicas implementadas.** Há scripts para pontuação de candidatos, inspeção de mídia e render com legendas, testados com dados e mídia sintéticos. A transcrição PT-BR é opcional e depende de faster-whisper/modelo; a inferência real ainda não foi executada nesta rodada. A pesquisa de tendências, a inspeção do conteúdo e as escolhas editoriais continuam a cargo do agente.
+
+O pacote está organizado para uso a partir do repositório. Não houve instalação de plugin nem execução de uma sessão do Claude. O render técnico mantém revisão audiovisual pendente; não equivale a um corte real já aprovado.
+
+## Começar
+
+```bash
+git clone https://github.com/elitt01/cuts-for-social_media.git
+cd cuts-for-social_media
+python3 scripts/media.py preflight
+python3 scripts/score_candidates.py examples/candidatos.sinteticos.json
+python3 -m unittest discover -s tests -v
+```
+
+Usar `python` se esse for o comando disponível no sistema. O exemplo de seleção é explicitamente fictício e serve para conferir a lógica. A base usa biblioteca padrão Python; o render requer FFmpeg/ffprobe com libx264, AAC e subtitles/libass para legendas. Ver os [comandos de mídia](docs/ferramentas-cli.md) e o [avaliador de candidatos](docs/selecao-cli.md).
 
 ## Resultado pretendido
 
@@ -31,31 +47,41 @@ A nota de potencial é uma heurística editorial, nunca uma probabilidade de vir
 
 | Arquivo | Uso |
 | --- | --- |
+| [START_HERE.md](START_HERE.md) | Como iniciar e executar um pedido de corte |
 | [AGENTS.md](AGENTS.md) | Regras para trabalhar neste projeto |
 | [CLAUDE.md](CLAUDE.md) | Ponto de entrada para o Claude, ligado às instruções compartilhadas |
 | [Guia de execução](docs/execucao.md) | Como iniciar no Work, no computador ou no Claude |
 | [Skill principal](skills/cortes-virais-br/SKILL.md) | Ordem de execução para o agente |
 | [Descoberta e seleção](skills/cortes-virais-br/references/selecao.md) | Pesquisa de tendências, critérios e comparação de desempenho |
 | [Edição para o Brasil](skills/cortes-virais-br/references/edicao-br.md) | Legendas, ritmo, composição, áudio, presets e estudo de referências |
+| [Referências observadas](docs/referencias-observadas.md) | Amostra visual brasileira com alcance e limites da inspeção |
 | [Ferramentas e arquitetura](skills/cortes-virais-br/references/ferramentas.md) | FFmpeg, transcrição, ingestão, contratos e limitações |
-| [Briefing](docs/briefing.md) | Perguntas pendentes, uma decisão de cada vez |
+| [Ferramentas de mídia](scripts/media.py) | Preflight, probe, transcrição opcional e render |
+| [Avaliador](scripts/score_candidates.py) | Notas, intervalos de evidência e seleção determinística |
+| [Briefing](docs/briefing.md) | Decisões confirmadas e suposições reversíveis |
 | [Roadmap](docs/roadmap.md) | O que existe e o que falta implementar |
-| [Configuração inicial](config/brief.example.json) | Preferências ainda não respondidas |
+| [Validação](docs/validacao.md) | Testes executados, exemplo renderizado e limites da evidência |
+| [Configuração inicial](config/brief.example.json) | Defaults prontos; preencher o material e o tema da tarefa |
 | [Decisões do projeto](config/project.json) | Política de vários nichos confirmada pelo usuário |
 | [Ficha de referência](templates/referencia.example.json) | Registro de um vídeo realmente inspecionado |
 | [Plano de corte](templates/plano.example.json) | Contrato inicial para fonte, timeline, edição e QA |
+| [Exemplos sintéticos](examples/README.md) | Conferir seleção e render com material gerado localmente |
 
 ## Edição baseada em evidências
 
 O projeto atende a **vários nichos**, conforme o pedido e as tendências. Uma tarefa sobre games não deve virar um corte de futebol só porque futebol liderou uma busca geral. Em pedidos abertos, comparar oportunidades de temas diferentes e justificar a escolha com evidências atuais.
 
-Não foi assistida uma amostra audiovisual brasileira nesta rodada. Os três presets — conversa, humor e gameplay — são hipóteses iniciais detalhadas, não um estilo brasileiro já comprovado. Estudar referências reais com áudio do nicho escolhido em cada tarefa, incluindo cortes de desempenho comum; não aplicar a mesma edição a todos os assuntos.
+Foram inspecionados quadros públicos de quatro publicações oficiais brasileiras: conversa com imagens complementares, reação com composição simples e gameplay com câmera/textos/efeitos pontuais. O [relatório](docs/referencias-observadas.md) registra fonte, datas e o que foi observado. O áudio não foi ouvido e os vídeos não foram assistidos integralmente; a amostra não comprova viralidade nem uma preferência universal do Brasil.
+
+Os presets de conversa, humor e gameplay são pontos de partida experimentais. Estudar referências atuais com áudio do nicho em cada tarefa e adaptar a técnica ao momento, preservando o padrão de 15–30 segundos.
 
 Orientações de publicidade do TikTok estão identificadas como publicidade. Não são apresentadas como prova de desempenho de cortes orgânicos. Cada referência inclui seu alcance e limitações.
 
-## Ferramentas previstas
+## Ferramentas e limites
 
-V1 proposta: Python + FFmpeg/ffprobe + faster-whisper. yt-dlp é opcional para ingestão compatível com acesso e condições de uso; Remotion é opcional para animações mais complexas. Dependências, comandos e testes ainda serão implementados após o briefing.
+Base atual: Python + FFmpeg/ffprobe. O render aceita cortes múltiplos, crop em pixels, exportação vertical, ASS/SRT e um manifesto técnico. faster-whisper é opcional para transcrição local. Download de lives, rastreamento de rosto, layouts de câmera+jogo, inserção de memes, trilha e efeitos não são automatizados pela CLI atual; o agente precisa usar ferramentas adicionais para esses elementos. Pedidos não suportados pela CLI devem gerar erro claro, sem ignorar elementos da edição.
+
+yt-dlp e Remotion são opções documentadas para evoluir ingestão e composição. Não há servidor MCP nem serviço pago obrigatório. As dependências e modelos não são instalados pelo preflight.
 
 Uma skill orienta o agente; ela não fornece acesso a vídeos, pesquisa, GPU ou execução por si só. O ambiente precisa disponibilizar essas capacidades.
 

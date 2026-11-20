@@ -2,20 +2,54 @@
   "schema_version": "0.1.0",
   "status": "blank_template",
   "run_id": null,
+  "duration_target_seconds": {
+    "min": 15,
+    "max": 30
+  },
   "candidate": {
+    "candidate_id": null,
+    "source_file": null,
     "source_url": null,
     "creator": null,
     "source_start_seconds": null,
     "source_end_seconds": null,
-    "context_reviewed": { "start_seconds": null, "end_seconds": null, "mode": "unavailable" },
+    "context_reviewed": {
+      "start_seconds": null,
+      "end_seconds": null,
+      "mode": "unavailable"
+    },
     "trend_evidence": [],
-    "potential": { "heuristic_version": "0.1", "criteria": {}, "score": null, "range_min": null, "range_max": null, "evidence_coverage_pct": 0 },
-    "observed_performance": { "snapshots": [], "comparison_cohort": null, "label": "desempenho_desconhecido" },
+    "potential": {
+      "heuristic_version": "0.1",
+      "criteria": {
+        "gancho": null,
+        "desfecho": null,
+        "compreensao": null,
+        "adequacao": null,
+        "relevancia": null,
+        "novidade": null,
+        "viabilidade": null
+      },
+      "score": null,
+      "range_min": null,
+      "range_max": null,
+      "evidence_coverage_pct": 0
+    },
+    "observed_performance": {
+      "snapshots": [],
+      "comparison_cohort": null,
+      "label": "desempenho_desconhecido"
+    },
     "selection_reason": null,
     "access_status": "unknown",
     "rights_status": "unknown"
   },
-  "narrative": { "hook": null, "context": null, "development": null, "payoff": null },
+  "narrative": {
+    "hook": null,
+    "context": null,
+    "development": null,
+    "payoff": null
+  },
   "editing": {
     "preset": null,
     "source_files": [],
@@ -25,9 +59,28 @@
     "captions_output_timeline": [],
     "overlays": [],
     "audio_assets": [],
-    "output": { "width": 1080, "height": 1920, "fps": null, "video_codec": "h264", "audio_codec": "aac", "pixel_format": "yuv420p" }
+    "output": {
+      "width": 1080,
+      "height": 1920,
+      "fps": null,
+      "video_codec": "h264",
+      "audio_codec": "aac",
+      "pixel_format": "yuv420p"
+    }
   },
-  "qa": { "technical_checks": [], "full_watch_with_audio_done": false, "context_fidelity": "not_checked", "captions_reviewed": false, "mobile_readability": "not_checked", "blockers": [] },
-  "delivery": { "requested": false, "status": "not_prepared", "artifact_paths": [], "checksums": {} },
+  "qa": {
+    "technical_checks": [],
+    "full_watch_with_audio_done": false,
+    "context_fidelity": "not_checked",
+    "captions_reviewed": false,
+    "mobile_readability": "not_checked",
+    "blockers": []
+  },
+  "delivery": {
+    "requested": false,
+    "status": "not_prepared",
+    "artifact_paths": [],
+    "checksums": {}
+  },
   "unknowns": []
 }

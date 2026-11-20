@@ -1,12 +1,14 @@
 # Edição de cortes de lives para audiência brasileira
 
-Pesquisa consultada em **20/11/2026**. Este documento distingue orientação oficial, observação audiovisual e proposta editorial. Não existe aqui uma amostra de vídeos brasileiros assistidos: resultados de busca e metadados não foram tratados como análise de edição. Os presets abaixo são pontos de partida experimentais, não descrição comprovada do gosto de todo o Brasil.
+Pesquisa consultada em **20/11/2026**. Este documento distingue orientação oficial, observação audiovisual e proposta editorial. A [amostra observada](../../../docs/referencias-observadas.md) examina quadros públicos de quatro publicações brasileiras, sem áudio nem reprodução integral. Resultados de busca e metadados não foram tratados como vídeo assistido. Os presets abaixo são pontos de partida experimentais, não descrição comprovada do gosto de todo o Brasil.
 
 ## Conclusão operacional
 
 Construir a edição em torno de uma situação compreensível e de uma reação ou conclusão que compense a atenção. Legendas legíveis, enquadramento que preserve a ação e cortes com função devem vir antes de efeitos. Escolher um perfil de edição por contexto e validar com referências brasileiras do nicho e resultados do canal. Não prometer viralidade nem assumir que mais efeitos aumentam alcance.
 
 Preferência confirmada pelo usuário em 20/11/2026: **adaptar ao clipe, usando memes e efeitos quando ajudarem**. Essa é uma decisão editorial do projeto, não uma medição do gosto do público brasileiro. O agente deve selecionar e estudar referências por conta própria, aceitando exemplos opcionais do usuário.
+
+Duração padrão confirmada: **15–30 segundos**, com prioridade para um arco completo. As faixas dos presets abaixo seguem essa escolha, não uma recomendação universal das plataformas. Outra duração explícita no pedido prevalece.
 
 ## O que as fontes sustentam
 
@@ -86,7 +88,7 @@ Todos os valores são **defaults experimentais**. Duração deve acompanhar o ar
 | Parâmetro | Limpo / conversa | Humor / reação | Gameplay / evento |
 |---|---|---|---|
 | Canvas | 1080×1920, 9:16 | 1080×1920, 9:16 | 1080×1920, 9:16 |
-| Faixa inicial de duração | 25–60s | 15–45s | 20–60s |
+| Duração padrão do projeto | 15–30s | 15–30s | 15–30s |
 | Abertura | Problema/frase clara já no primeiro plano | Situação ou expectativa que prepara a piada | Ação ou objetivo do evento |
 | Gancho na tela | Uma linha curta, remover após contextualizar | Uma linha curta sem estragar a surpresa | Contexto suficiente para entender o objetivo |
 | Bloco de legenda | 3–6 palavras; até 2 linhas | 2–5 palavras; até 2 linhas | 2–5 palavras; até 2 linhas |
@@ -156,7 +158,7 @@ Testar uma alteração relevante por vez em clipes comparáveis: abertura, posi�
 ## Lacunas atuais
 
 - Vários nichos, destinos TikTok/Reels/Shorts e busca livre com links/arquivos confirmados. O nicho, os criadores e as referências de cada tarefa dependerão do pedido ou da descoberta; não há lista fixa de criadores.
-- Nenhuma amostra audiovisual brasileira foi assistida nesta rodada; portanto os presets ainda não são um estilo derivado de referências observadas.
+- Há observação visual parcial de quatro publicações, documentada com fontes e limites; áudio e reprodução integral permanecem pendentes. Os presets não são uma receita de desempenho validada.
 - Não foi estabelecido um meme ou trilha específico em alta em novembro/2026. Tendências devem ser pesquisadas de novo no momento de cada tarefa.
 - Não há dados do canal para calibrar intensidade, duração, gancho ou desempenho.
 - Documentação de anúncios é apenas orientação inicial para edição de orgânico, não validação do mercado de cortes.

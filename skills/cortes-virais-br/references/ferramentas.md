@@ -1,5 +1,5 @@
 # Arquitetura proposta — cortes de lives
-Consulta: 20/11/2026. Este é um projeto de repositório para instruções de agente e ferramentas; não comprova um plugin instalado, descoberta automática funcionando ou qualidade de um vídeo final.
+Consulta: 20/11/2026. O repositório contém instruções, avaliação de candidatos e ferramentas básicas de mídia testadas com material sintético. Isso não comprova um plugin instalado, execução no Claude ou qualidade editorial de um corte real.
 
 ## Decisão recomendada
 Começar com instruções compartilhadas e planejar ferramentas para Work e PC: Python coordenará arquivos JSON, FFmpeg fará corte/render e faster-whisper fará transcrição. Preparar uso pelo Claude quando solicitado com o link do repo, mantendo os mesmos contratos e verificando o ambiente real da sessão. Navegação/pesquisa do agente gera evidências de tendências. Adicionar yt-dlp apenas para fontes que permitem ingestão; Remotion apenas quando legendas e composições animadas justificarem a manutenção.
@@ -60,12 +60,13 @@ Caminhos abaixo são relativos à raiz do repositório. Um componente planejado 
 | skills/cortes-virais-br/references/ferramentas.md | Atual | Esta proposta de ferramentas, fluxo e QA |
 | config/brief.example.json e templates/ | Atual | Modelos em branco para briefing, referência e plano |
 | .gitignore | Atual | Exclusão de mídia, modelos e dados privados |
-| scripts/preflight.py | Planejado | Verificar dependências, filtros e recursos |
-| scripts/probe_media.py | Planejado | Registrar metadados de mídia |
-| scripts/transcribe.py | Planejado | Transcrever e alinhar segmentos/palavras |
-| scripts/render.py | Planejado | Renderizar a partir do plano validado |
+| START_HERE.md | Atual | Entrada operacional e padrões já decididos |
+| scripts/media.py | Atual | Subcomandos preflight, probe, transcribe opcional e render |
+| scripts/score_candidates.py | Atual | Pontuação, intervalos de evidência e escolha entre candidatos elegíveis |
+| docs/ferramentas-cli.md e docs/selecao-cli.md | Atual | Comandos e contratos exatos das CLIs |
+| docs/referencias-observadas.md | Atual | Observações visuais de quatro publicações, com áudio pendente |
+| examples/ e tests/ | Atual | Contratos fictícios e testes com mídia/dados sintéticos |
 | schemas/ | Planejado | Formalizar e validar contratos de dados |
-| tests/fixtures/ | Planejado | Exercitar sincronismo e exportação com mídia sintética |
 | .github/workflows/validate.yml | Planejado | Executar validação estrutural no CI |
 
 Não versionar MP4s de lives, chaves, cookies, modelos ou transcrições pessoais. Os arquivos finais pertencem ao armazenamento de entrega do usuário, fora do Git. Manter só referências permitidas e metadados mínimos.
@@ -86,7 +87,7 @@ Não versionar MP4s de lives, chaves, cookies, modelos ou transcrições pessoai
 
 ## Contratos atuais e extensões propostas
 
-Os modelos de configuração e tarefa incluem schema_version. run_id identifica uma execução real: no modelo de plano permanece null até iniciar o trabalho; configurações permanentes e fichas de referência reutilizáveis não exigem run_id. Timestamps numéricos usam segundos, salvo campos terminados em _ms. Datas de observação usam ISO 8601 com timezone. Nunca misturar timeline da fonte, trecho bruto e saída editada. Os modelos são rascunhos; JSON Schemas e validadores semânticos ainda não foram implementados.
+Os modelos de configuração e tarefa incluem schema_version. run_id identifica uma execução real: no modelo de plano permanece null até iniciar o trabalho; configurações permanentes e fichas de referência reutilizáveis não exigem run_id. Timestamps numéricos usam segundos, salvo campos terminados em _ms. Datas de observação usam ISO 8601 com timezone. Nunca misturar timeline da fonte, trecho bruto e saída editada. As CLIs validam seus campos operacionais; JSON Schemas completos ainda não foram implementados. Os contratos exatos estão nos guias de CLI, que prevalecem sobre sugestões de extensões futuras.
 
 ### config/brief.example.json — modelo atual
 - audience: locale, region, age_band (pode ser null), interests.
@@ -97,33 +98,33 @@ Os modelos de configuração e tarefa incluem schema_version. run_id identifica 
 - budget: paid_services_allowed=false até outra indicação.
 - unknowns e assumptions como listas separadas.
 
-### candidates.json — extensão planejada para listas de candidatos
-- candidate_id; source_url; creator; source_published_at; collected_at.
-- source_interval: start_seconds/end_seconds.
-- evidence: lista de {url, observed_at, region, metric, value|null, window, limitation}.
-- transcript_excerpt e inspection_status: not_inspected|audio_only|video_and_audio.
-- potential_score: valor heurístico ou null; rubric_version; componentes.
-- observed_performance: métricas realmente observadas, sem inferir retenção ausente.
-- access_status; rights_status: user_provided|permission_reported|licensed|unknown.
-- context_summary; reject_reasons; confidence; unknowns.
+### candidates.json — contrato atual do avaliador
+- Lista ou objeto com candidates; candidate_id textual único.
+- source_url ou source_file; source_start_seconds e source_end_seconds.
+- context_reviewed: start_seconds, end_seconds e mode: audiovisual/transcript_only/unavailable.
+- potential.criteria: sete chaves com {score,evidence,timecode_seconds} ou null.
+- observed_performance.snapshots: métricas realmente observadas e observed_at com fuso.
+- Metadados extras de criador, tendências, acesso e uso podem acompanhar a ficha; o avaliador não prova que essas declarações são verdadeiras.
+- Consultar docs/selecao-cli.md para elegibilidade, desempate e resposta research_required.
 
-### transcript.json — extensão planejada para transcrição
-- source_id; media_checksum; language; engine/model/version.
-- time_reference: source ou excerpt, com source_offset_seconds explícito.
-- segments: start_seconds/end_seconds, text.
-- words: start_seconds/end_seconds, text, confidence|null.
-- corrections: texto original, revisão, motivo; reviewer e revisão de nomes.
+### transcript.json — saída atual da transcrição opcional
+- source_file, language, engine, model e review_status: pending.
+- time_reference: input_file; source_offset_seconds: 0 para o arquivo fornecido.
+- segments: start_seconds/end_seconds/text; words inclui tempos/text/probability.
+- O agente deve registrar o offset da live quando transcrever um recorte e remapear para a montagem final; a CLI não faz essa revisão nem o alinhamento de cortes automaticamente.
+- A inferência real depende de faster-whisper e de um modelo disponível; ainda não foi executada nesta validação.
 
 ### templates/plano.example.json — modelo atual de plano e execução
 - candidate: fonte, timecodes, contexto revisto, evidências, potencial e desempenho observado.
 - narrative: hook, context, development e payoff.
 - editing.output: width/height/fps/video_codec/audio_codec/pixel_format.
-- editing.source_files: IDs, caminhos e checksums a preencher.
-- editing.segments: segmentos e referências às fontes; definir source_in, source_out, output_in e speed ao implementar o render.
+- duration_target_seconds: faixa por pedido; default de min=15/max=30 segundos.
+- editing.source_files: objetos id/path; caminhos locais relativos ao plano ou absolutos.
+- editing.segments: source_id, source_in_seconds/source_out_seconds e output_in_seconds opcional; sequência concatenada sem lacunas. Consultar os aliases aceitos no guia de mídia.
 - editing.crops: segmento e retângulo normalizado ou pixels declarados.
-- editing.captions_output_timeline: legendas com tempo na saída, estilo e limites de linhas.
-- editing.overlays e editing.audio_assets: inserções, duração, posição, origem e nível.
-- editing.time_mapping: mapeamento fonte→saída após toda remoção, repetição ou mudança de velocidade.
+- editing.captions_output_timeline: start_seconds/end_seconds/text e highlight_word opcional; tempos da saída, em ordem e sem sobreposição nesta V1.
+- editing.overlays e editing.audio_assets: vazios na CLI atual; elementos adicionais exigem ferramentas externas e não podem ser ignorados.
+- O manifesto do render calcula time_mapping e registra a quantização por frames. editing.time_mapping pré-preenchido não substitui os segmentos. Velocidades diferentes de 1 não são suportadas.
 - qa: technical_checks, full_watch_with_audio_done, context_fidelity, captions_reviewed, mobile_readability e blockers. Usar pass/fail/not_checked nos resultados dos checks; não afirmar revisão integral a partir de metadados.
 - delivery: requested, status, artifact_paths e checksums. Usar not_prepared/prepared/delivered; só marcar delivered após verificar entrega.
 
@@ -138,6 +139,8 @@ MP4 H.264 + AAC, yuv420p, 1080×1920, 30 fps ou frequência apropriada à fonte,
 Usar ASS para borda e destaque e gerar SRT legível à parte. Se desejar karaokê por palavra, comparar legibilidade entre ASS e Remotion antes de escolher. Não criar zoom contínuo nem trilha automática por default.
 
 ## Verificação proporcional
+
+Executar `python3 -m unittest discover -s tests -v` para a suíte atual. Ela usa material sintético, sem baixar lives ou modelos. Testes de inferência real e revisão audiovisual de cortes reais permanecem separados.
 
 Testes úteis:
 - Schema rejeita fim antes do início, duração negativa, NaN, fonte inexistente e caminhos fora da pasta de trabalho.

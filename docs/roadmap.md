@@ -1,30 +1,34 @@
-# Estado e próximos resultados
+# Estado e evolução do projeto
 
-## Base organizada no repositório
+## Disponível nesta versão
 
-- Instruções de orquestração e regras para agentes.
-- Pesquisa primária de descoberta, edição e ferramentas com limitações declaradas.
-- Critérios de potencial separados de tração observada.
-- Presets experimentais detalhados de conversa, humor e gameplay.
-- Modelos de briefing, referência e plano de corte.
-- Manifesto inicial de pacote de instruções, sem servidor ou conexão inventada.
-- Guia de execução compartilhada e entrada CLAUDE.md; compatibilidade documental preparada, sem execução validada no Claude.
+- Briefing fechado: vários nichos, três plataformas, busca livre com links/arquivos, execução híbrida, seleção automática, edição adaptativa e duração padrão de 15–30s.
+- Instruções compartilhadas, START_HERE.md e entrada CLAUDE.md.
+- Avaliador de candidatos com evidências, dados ausentes, intervalos de nota e elegibilidade documentados.
+- Ferramentas de preflight, probe e render com cortes múltiplos, crop geométrico, ASS/SRT e manifesto técnico.
+- Wrapper de transcrição PT-BR opcional com faster-whisper; sem inferência real validada nesta rodada.
+- Testes com dados e mídia sintéticos, incluindo sincronismo e preservação de fontes.
+- Observação visual parcial de quatro publicações brasileiras oficiais; fontes, datas e limites registrados.
 
-## Pendências
+## Validações e capacidades ainda pendentes
 
-1. Definir duração padrão. Política de edição adaptativa já confirmada; quantidade, identidade visual e destino alternativo são preferências opcionais por pedido.
-2. Inspecionar referências brasileiras reais com áudio; contrastar vídeos fortes e comuns.
-3. Escolher receita de edição e implementar preflight, inspeção, transcrição e render com ferramentas verificadas.
-4. Testar primeiro em mídia sintética para cortes, timelines, legendas e exportação; conferir os mesmos contratos nos ambientes de execução escolhidos.
-5. Produzir e revisar um corte real a partir de material acessível em condições adequadas de uso.
-6. Só após validação, empacotar e instalar o plugin se solicitado; conferir componentes disponíveis.
+1. Assistir a referências atuais e a um corte real com áudio; os storyboards não substituem essa revisão.
+2. Executar inferência de transcrição com modelo disponível e avaliar nomes, gírias e timestamps em PT-BR.
+3. Fazer uma entrega real a partir de material acessível, registrando fonte, contexto, revisão e destino.
+4. Validar a mesma receita em uma sessão do Claude e no computador escolhido pelo usuário; portabilidade documental não comprova dependências instaladas.
 
-## Critérios para declarar a primeira versão funcional
+## Evoluções opcionais
 
-- Uma solicitação completa gera um arquivo MP4 reproduzível e legendas revisadas.
-- Fonte, timestamps, razão da escolha e limites dos dados estão registrados.
-- Alterações na timeline preservam sincronismo de legendas.
-- Revisão audiovisual e técnica foram feitas e registradas honestamente.
-- Entrega é confirmada no destino pedido.
+- Ingestão assistida por yt-dlp ou APIs oficiais, conforme acesso disponível.
+- Composição câmera+jogo, rastreamento, inserção de memes, trilha e efeitos; os campos não suportados pela CLI atual geram erro.
+- Integração de modelos de legenda animada, se necessária e compatível com recursos/licença.
+- JSON Schemas completos e validação em CI.
+- Empacotamento e instalação do plugin quando solicitados; o repositório não foi instalado automaticamente.
 
-As pendências e os critérios acima descrevem resultados futuros. A base de instruções e pesquisa está organizada; as ferramentas de vídeo e os testes de mídia ainda não foram executados.
+## Para declarar um corte pronto
+
+- O arquivo MP4 existe, reproduz e atende ao pedido, com legendas revisadas.
+- Fonte, timestamps, motivo da escolha e limites dos dados estão registrados.
+- A edição preserva contexto e desfecho; cortes mantêm sincronismo de áudio e legenda.
+- Revisões técnica e audiovisual foram feitas e registradas honestamente.
+- A entrega é confirmada no destino pedido. O manifesto de render permanece pendente até a revisão/entrega real do agente.

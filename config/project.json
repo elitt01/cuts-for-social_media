@@ -1,6 +1,7 @@
 {
   "schema_version": "0.1.0",
   "project": "cuts-for-social_media",
+  "briefing_status": "complete",
   "repository_url": "https://github.com/elitt01/cuts-for-social_media",
   "audience": { "locale": "pt-BR", "region": "BR", "age_band": null },
   "niche_policy": {
@@ -50,6 +51,17 @@
     "reference_selection": "agent_research_with_optional_user_examples",
     "preserve_context_speech_and_payoff": true
   },
+  "duration_policy": {
+    "min_seconds": 15,
+    "max_seconds": 30,
+    "explicit_request_overrides": true,
+    "preserve_complete_arc": true
+  },
+  "request_defaults": {
+    "clip_count": 1,
+    "branding": "neutral",
+    "delivery_destination": "current_session_or_local_output"
+  },
   "delivery": { "on_request": true, "publish_automatically": false },
   "paid_services_enabled": false,
   "confirmed_decisions": [
@@ -59,8 +71,10 @@
     { "date": "2026-11-20", "decision": "Permitir busca livre, aceitando também links e arquivos enviados pelo usuário." },
     { "date": "2026-11-20", "decision": "Permitir execução no ChatGPT Work e no computador local; preparar uso no Claude quando solicitado com o link do repositório." },
     { "date": "2026-11-20", "decision": "O agente deve escolher o melhor trecho, editar, revisar e entregar o vídeo pronto, sem exigir escolha prévia entre candidatos." },
-    { "date": "2026-11-20", "decision": "Adaptar a edição ao clipe, usando memes e efeitos quando ajudarem." }
+    { "date": "2026-11-20", "decision": "Adaptar a edição ao clipe, usando memes e efeitos quando ajudarem." },
+    { "date": "2026-11-20", "decision": "Usar 15–30 segundos como duração padrão quando o pedido não especificar outra." }
   ],
-  "pending_questions": ["duração padrão"],
+  "pending_questions": [],
+  "reversible_assumptions": ["Um corte por pedido quando a quantidade for omitida", "Identidade visual neutra até existir orientação de marca", "Entregar na sessão atual ou na pasta local de saída conforme o ambiente"],
   "optional_preferences": ["referências enviadas pelo usuário", "quantidade por pedido", "identidade visual", "destino alternativo de entrega"]
 }

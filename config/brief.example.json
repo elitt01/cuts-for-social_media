@@ -1,6 +1,6 @@
 {
   "schema_version": "0.1.0",
-  "status": "awaiting_context",
+  "status": "ready_to_fill_source",
   "audience": { "locale": "pt-BR", "region": "BR", "age_band": null, "interests": [] },
   "niche_policy": "adaptive_by_request_and_trends",
   "requested_topic": null,
@@ -12,11 +12,11 @@
   "reference_selection": "agent_research_with_optional_user_examples",
   "execution_environment": { "mode": "hybrid", "selected_runtime": null, "agent_client": null },
   "selection_mode": "automatic_best_candidate",
-  "count": null,
-  "duration_target_seconds": { "min": null, "max": null },
-  "delivery": { "formats": ["mp4", "srt"], "destination": null, "publish": false },
+  "count": 1,
+  "duration_target_seconds": { "min": 15, "max": 30 },
+  "delivery": { "formats": ["mp4", "srt"], "destination": "current_session_or_local_output", "publish": false },
   "budget": { "paid_services_allowed": false },
-  "assumptions": ["Sem publicação automática"],
-  "unknowns": ["duração", "destino"],
+  "assumptions": ["Um corte se a quantidade não for especificada", "Identidade visual neutra", "Entrega na sessão atual ou pasta local de saída", "Sem publicação automática"],
+  "unknowns": [],
   "research_needed": ["referências audiovisuais atuais do nicho escolhido na tarefa"]
 }

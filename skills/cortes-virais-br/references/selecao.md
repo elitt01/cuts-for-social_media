@@ -77,7 +77,7 @@ Todos os pesos e limiares abaixo são **heurísticas iniciais**, a calibrar com 
 
 Não substituir dado faltante por zero. Produzir intervalo: limite inferior soma apenas contribuições conhecidas; limite superior acrescenta todo o peso dos critérios ainda não avaliados. Exemplo fictício: 60 pontos conhecidos e peso desconhecido 20 ⇒ intervalo 60–80, não nota 75 normalizada nem nota 60 final. Informar cobertura de evidência de 80%.
 
-Proposta de triagem quando todos os critérios estiverem avaliados: 80–100 priorizar; 65–79 considerar com ajuste; abaixo de 65 não priorizar. Gancho e desfecho abaixo de 2 exigem revisão mesmo com total alto. Esses cortes são convenção interna, não validação estatística.
+Proposta de triagem quando todos os critérios estiverem avaliados: 80–100 priorizar; 65–79 considerar com ajuste; abaixo de 65 não priorizar. Gancho, desfecho e viabilidade abaixo de 2 exigem revisão mesmo com total alto. Esses cortes são convenção interna, não validação estatística.
 
 ### 6. Calcular tração apenas com dados observados
 
@@ -106,25 +106,25 @@ Retenção, compartilhamentos, salvamentos e conclusão só entram quando a font
 ```json
 {
   "candidate_id": "identificador-estavel",
-  "source_url": "URL original verificada",
+  "source_url": null,
+  "source_file": null,
   "platform": "youtube|twitch|arquivo|outro",
   "creator": "nome conferido",
   "published_at": null,
   "observed_at": "ISO-8601 com fuso",
-  "clip_start_s": null,
-  "clip_end_s": null,
-  "context_reviewed": {"start_s": null, "end_s": null, "mode": "audiovisual|transcript_only|unavailable"},
+  "source_start_seconds": null,
+  "source_end_seconds": null,
+  "context_reviewed": {"start_seconds": null, "end_seconds": null, "mode": "unavailable"},
   "trend_evidence": [{"url": "URL consultada", "geo": "BR", "window": "24h", "observed_at": "ISO-8601", "source_updated_at": null, "status": "available|unavailable", "claim": "o que foi observado", "metric_name": null, "metric_value": null}],
-  "snapshots": [{"observed_at": "ISO-8601", "views": null, "likes": null, "comments": null}],
-  "potential": {"heuristic_version": "0.1", "criteria": {}, "score": null, "range_min": null, "range_max": null, "evidence_coverage_pct": 0},
-  "traction": {"label": "desempenho_desconhecido", "comparison_cohort": null, "comparison_n": null},
+  "potential": {"heuristic_version": "0.1", "criteria": {"gancho": null, "desfecho": null, "compreensao": null, "adequacao": null, "relevancia": null, "novidade": null, "viabilidade": null}},
+  "observed_performance": {"snapshots": [], "label": "desempenho_desconhecido", "comparison_cohort": null},
   "decision": "research|shortlist|reject",
   "reason": "justificativa concreta",
   "missing_data": []
 }
 ```
 
-Esquema proposto, não conector implementado. A ausência de métrica deve permanecer `null`, acompanhada do motivo quando relevante. Guardar também consultas executadas, período e limitações de acesso em um registro do trabalho.
+Esta é uma ficha a preencher, não uma prova de inspeção nem um conector de busca. Para usar o avaliador, fornecer uma lista dessas fichas ou o objeto {candidates:[...]}; uma nota conhecida usa {score,evidence,timecode_seconds}, enquanto notas ausentes são null. O [guia do avaliador](../../../docs/selecao-cli.md) documenta o contrato executável; os campos extras de pesquisa são preservados no registro do agente. Guardar consultas, período e limitações de acesso. Nunca marcar modo audiovisual a partir de storyboards ou transcrição isolada.
 
 ## Aprendizado posterior
 
@@ -136,7 +136,7 @@ Quando o usuário fornecer resultados, comparar previsões editoriais com as mé
 2. Google Trends BR, página observada: https://trends.google.com/trending?geo=BR — exemplos do retrato público, sujeitos a cache e nova verificação.
 3. Google, FAQ dos dados Trends: https://support.google.com/trends/answer/4365533?hl=pt-BR — normalização e amostragem.
 4. YouTube, desempenho do conteúdo: https://support.google.com/youtube/answer/12220281?hl=pt-BR — distinções de visualizações e métricas disponíveis no Analytics.
-5. Google for Developers, busca YouTube: https://developers.google.com/youtube/data/reference/rest/v3/search/list — parâmetros, limitações e semântica de região/idioma; página indica atualização em 12/11/2026. Ref `turn344327588view2`, `turn724062918view1`.
+5. Google for Developers, busca YouTube: https://developers.google.com/youtube/data/reference/rest/v3/search/list — parâmetros, limitações e semântica de região/idioma.
 6. Twitch Developers, Get Clips: https://dev.twitch.tv/docs/api/reference/clips — autenticação, filtros e metadados.
 7. TikTok, Como utilizar as tendências: https://ads.tiktok.com/resources/help/article/how-to-use-trends?lang=pt — atualização julho/2026, login e filtros.
 8. TikTok Creative Center BR: https://ads.tiktok.com/creative/creativeCenter/trends?countryCode=BR&period=7 — acesso não forneceu ranking legível nesta consulta.

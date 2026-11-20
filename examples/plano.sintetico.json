@@ -1,0 +1,70 @@
+{
+  "schema_version": "0.1.0",
+  "status": "synthetic_example",
+  "run_id": "demo-sintetica-18s",
+  "duration_target_seconds": {
+    "min": 15,
+    "max": 30
+  },
+  "editing": {
+    "source_files": [
+      {
+        "id": "demo",
+        "path": "../runs/demo/input.mp4"
+      }
+    ],
+    "segments": [
+      {
+        "source_id": "demo",
+        "source_in_seconds": 1,
+        "source_out_seconds": 10
+      },
+      {
+        "source_id": "demo",
+        "source_in_seconds": 14,
+        "source_out_seconds": 23
+      }
+    ],
+    "captions_output_timeline": [
+      {
+        "start_seconds": 0,
+        "end_seconds": 4.5,
+        "text": "Exemplo sintético.\nNão é uma live real.",
+        "highlight_word": "sintético"
+      },
+      {
+        "start_seconds": 4.5,
+        "end_seconds": 9,
+        "text": "Legenda com ação,\nacentuação e ç."
+      },
+      {
+        "start_seconds": 9,
+        "end_seconds": 13.5,
+        "text": "Segundo trecho,\nmesma timeline final."
+      },
+      {
+        "start_seconds": 13.5,
+        "end_seconds": 18,
+        "text": "A revisão audiovisual\nainda é necessária.",
+        "highlight_word": "revisão"
+      }
+    ],
+    "crops": [],
+    "overlays": [],
+    "audio_assets": [],
+    "output": {
+      "width": 720,
+      "height": 1280,
+      "fps": 30,
+      "video_codec": "h264",
+      "audio_codec": "aac",
+      "pixel_format": "yuv420p"
+    }
+  },
+  "qa": {
+    "full_watch_with_audio_done": false
+  },
+  "delivery": {
+    "status": "not_prepared"
+  }
+}

@@ -2,13 +2,13 @@
 
 Decisão confirmada em 20/11/2026: usar o ambiente do ChatGPT Work e o computador local conforme a tarefa. Preparar também uso no Claude quando o usuário pedir e fornecer o link do repositório.
 
-Esta versão fornece instruções compartilhadas e um ponto de entrada. O pipeline de vídeo ainda será implementado e não houve teste de execução no Claude. Consultar o [roadmap](roadmap.md) para distinguir componentes atuais de planejados.
+Esta versão fornece instruções compartilhadas, pontuação de candidatos e ferramentas básicas de mídia, testadas com material sintético. Não houve teste de inferência real de transcrição nem de uma sessão do Claude. Consultar [START_HERE.md](../START_HERE.md), os [comandos de mídia](ferramentas-cli.md), o [avaliador](selecao-cli.md) e o [roadmap](roadmap.md) para distinguir componentes atuais de planejados.
 
 ## Início comum
 
 1. Ler [AGENTS.md](../AGENTS.md), [README.md](../README.md), [config/project.json](../config/project.json) e a [skill principal](../skills/cortes-virais-br/SKILL.md).
 2. Identificar se a tarefa é descobrir, selecionar, editar material fornecido ou entregar um resultado existente.
-3. Aplicar as decisões confirmadas: vários nichos; TikTok/Reels/Shorts; busca livre com links e arquivos do usuário; escolher o melhor trecho, editar, revisar e entregar pronto sem exigir escolha intermediária de candidatos.
+3. Aplicar as decisões confirmadas: vários nichos; TikTok/Reels/Shorts; busca livre com links e arquivos do usuário; edição adaptativa de 15–30 segundos; escolher o melhor trecho, editar, revisar e entregar pronto sem exigir escolha intermediária de candidatos.
 4. Conferir capacidades reais: leitura da fonte e contexto, áudio/vídeo, terminal, dependências, espaço e modo de entregar arquivos.
 5. Executar as etapas autorizadas que forem possíveis. Registrar uma dependência concreta quando outra etapa precisar de recursos ausentes.
 
@@ -20,7 +20,7 @@ Usar o executor disponível e os anexos acessíveis na sessão. Conferir FFmpeg/
 
 ## No computador local
 
-Usar uma cópia do repositório e os arquivos realmente acessíveis ao agente nessa máquina. Conferir sistema operacional, dependências e recursos. Reaproveitar os mesmos formatos de plano, referência e evidência. Não tratar instruções planejadas em scripts/ como comandos já implementados.
+Usar uma cópia do repositório e os arquivos realmente acessíveis ao agente nessa máquina. Conferir sistema operacional, dependências e recursos. Reaproveitar os mesmos formatos de plano, referência e evidência. Os comandos implementados estão em scripts/media.py e scripts/score_candidates.py; verificar preflight e documentação antes de usar componentes opcionais.
 
 ## No Claude com o link do repo
 

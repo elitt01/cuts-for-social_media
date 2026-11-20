@@ -2,11 +2,12 @@
 
 ## Objetivo e estágio
 
-Organizar um plugin/skill para descobrir, selecionar, editar e entregar cortes de lives para o público brasileiro. Atender vários nichos conforme tendências e pedidos; não fixar um único nicho. Este é um rascunho de instruções e pesquisa, com briefing parcialmente respondido. Ler README.md, config/project.json e docs/briefing.md antes de alterar decisões editoriais.
+Organizar um plugin/skill para descobrir, selecionar, editar e entregar cortes de lives para o público brasileiro. Atender vários nichos conforme tendências e pedidos; não fixar um único nicho. O briefing está fechado; o estado real de implementação e validação está em README.md e docs/roadmap.md. Ler esses arquivos, config/project.json e docs/briefing.md antes de alterar decisões editoriais.
 
 ## Trabalho com o usuário
 
 - Fazer uma pergunta de contexto por vez, com 2–4 opções quando ajudar.
+- Não reabrir as escolhas já respondidas nem bloquear o trabalho por preferências opcionais. Usar os defaults reversíveis quando o pedido omitir quantidade, identidade ou destino.
 - Preservar respostas em configuração e documentação; manter suposições separadas.
 - Usar subagentes para tarefas independentes quando o usuário solicitar; atribuir arquivos ou escopos distintos e consolidar a revisão.
 - Não exigir aprovação rotineira entre etapas já autorizadas. Perguntar quando faltar uma escolha que realmente muda o resultado.
@@ -32,6 +33,7 @@ Organizar um plugin/skill para descobrir, selecionar, editar e entregar cortes d
 - Separar potencial editorial de tração observada. Usar os pesos apenas como heurísticas versionadas.
 - Comparar desempenho por plataforma, perfil, formato e idade de publicação; declarar ausência de base.
 - Preservar gancho, contexto mínimo e desfecho; não fabricar polêmica nem remover negações para mudar uma fala.
+- Usar 15–30 segundos por padrão, salvo duração explícita diferente. Procurar um trecho que mantenha o arco completo nessa faixa; não truncar o desfecho nem acelerar a fala para forçar o limite.
 - Derivar estilo de referências realmente inspecionadas do nicho. Não chamar presets genéricos de estilo brasileiro validado.
 - Adaptar a edição ao clipe, com memes e efeitos quando contribuírem para o resultado. Pesquisar referências por conta própria; exemplos do usuário são opcionais, não uma condição para iniciar.
 - Fazer cada efeito ter uma função narrativa; preservar fala, ação do jogo, reações e pausas relevantes.

@@ -1,19 +1,19 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "cortes-virais-br",
-  "version": "0.1.0",
-  "description": "Rascunho de instruções para pesquisa, seleção, edição e entrega de cortes de lives em português brasileiro. Requer briefing e ferramentas no ambiente executor.",
+  "version": "0.2.0",
+  "description": "Instruções e ferramentas básicas para pesquisa, seleção e edição de cortes de lives em português brasileiro, com duração padrão de 15–30 segundos.",
   "author": { "name": "Rafael" },
   "extensions": {
     "com.openai": {
       "interface": {
         "displayName": "Cortes Virais BR",
         "shortDescription": "Cortes de lives em português",
-        "longDescription": "Orienta a pesquisa de tendências, avaliação de momentos, edição contextual e QA de cortes de lives. A base ainda depende do briefing e de validação com mídia real; não inclui servidor nem publica vídeos automaticamente.",
+        "longDescription": "Orienta pesquisa de tendências, seleção autônoma e edição adaptativa de cortes de 15–30 segundos. Inclui ferramentas locais de avaliação e render com legendas. Requer um agente e ambiente capazes de acessar e revisar a mídia; não inclui servidor nem publicação automática.",
         "developerName": "Rafael",
         "category": "Productivity",
         "capabilities": [],
-        "defaultPrompt": "Ajude a encontrar, avaliar e editar um corte de live para meu público, usando fontes atuais, contexto completo e um estilo definido por referências."
+        "defaultPrompt": "Encontre ou use o material enviado, escolha o melhor trecho e prepare um corte de 15–30 segundos para público brasileiro. Siga START_HERE.md, adapte a edição, revise e entregue o vídeo."
       }
     }
   }
