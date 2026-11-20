@@ -1,6 +1,6 @@
 ---
 name: cortes-virais-br
-description: "Orientar pesquisa, seleção, edição e entrega de cortes de lives em português brasileiro. Usar ao buscar momentos com potencial de alcance, avaliar clipes, estudar referências de edição, planejar legendas e efeitos ou produzir um corte solicitado. Requer acesso às fontes e ferramentas de mídia no ambiente."
+description: "Orientar pesquisa, seleção, edição e entrega de momentos reais de criadores e lives para o público brasileiro, preferindo viralidade já observada com evidência. Usar ao buscar clipes de acontecimentos e reações, gameplay de streamer/famoso, avaliar tração, estudar edição, planejar legendas e efeitos ou produzir um corte solicitado. Requer acesso às fontes e ferramentas de mídia no ambiente."
 ---
 
 # Cortes Virais BR
@@ -21,13 +21,17 @@ Identificar tema/nicho da tarefa, público, plataformas, fontes, quantidade, dur
 
 O briefing do projeto está fechado. Adotar duração de 15–30 segundos quando o pedido não especificar outra; selecionar um arco completo que caiba nessa faixa. Como defaults reversíveis, produzir um corte por pedido, usar identidade visual neutra e entregar na sessão atual ou pasta local de saída. Não voltar a perguntar essas escolhas apenas porque os campos específicos de uma nova tarefa ainda não foram preenchidos.
 
+Adotar como conteúdo padrão um momento real de criador, streamer ou famoso, envolvendo acontecimento engraçado, estranho ou inesperado e reação contextualizada. Em games, localizar pessoa efetivamente jogando, ação do jogo e reação ao acontecimento. Manter os vários nichos já confirmados; adaptar o tipo de participação real ao nicho, sem fixar o projeto em games.
+
+Não substituir gameplay por trailer oficial, compilação publicitária ou reação a trailer sem escolha explícita do usuário. Verificar a adequação do candidato antes de investir no render. O teste anterior de GTA 6 com trailer foi rejeitado pelo usuário: conservar somente seus resultados técnicos, sem chamá-lo de sucesso editorial.
+
 Adotar TikTok, Instagram Reels e YouTube Shorts como destinos confirmados, salvo escopo diferente em uma tarefa. Conferir requisitos e interface atuais de cada destino; manter um master e produzir variantes quando houver diferença real de enquadramento, legendas, áudio ou assets. Não exigir novamente a escolha de plataforma nem presumir licença de música válida entre plataformas.
 
 Adotar busca livre e aceitar links/arquivos enviados pelo usuário, sem exigir lista fixa de criadores. Distinguir material a editar de referência de estilo. Quando houver uma fonte explícita para a tarefa, priorizá-la; quando o pedido for de descoberta, procurar candidatos adequados em fontes acessíveis e registrar a origem. Não repetir a pergunta sobre liberdade de busca já respondida.
 
 Se houver tema, criador ou nicho pedido, dar prioridade a esse escopo e pesquisar oportunidades relevantes dentro dele. Se o pedido for aberto, descobrir oportunidades em vários nichos e selecionar pela evidência atual, qualidade do momento e adequação ao público; justificar a escolha. Não usar só o ranking geral de buscas como critério. Não interpretar vários nichos como obrigação de misturar assuntos sem relação em um vídeo.
 
-Verificar pesquisa, acesso audiovisual, arquivos, FFmpeg/ffprobe e transcrição disponíveis. Não prometer render ou coleta completa de plataformas sem essas capacidades. Usar arquivo fornecido quando uma URL não puder ser acessada.
+Verificar pesquisa, acesso audiovisual, arquivos, FFmpeg/ffprobe e transcrição disponíveis. Não prometer render ou coleta completa de plataformas sem essas capacidades. Usar arquivo fornecido quando uma URL não puder ser acessada e ele atender ao conteúdo solicitado. Em bloqueio, procurar outra fonte válida do momento ou outro candidato real dentro do tema e formato; se não houver material viável, relatar a limitação concreta, sem trocar silenciosamente o tipo de vídeo.
 
 Respeitar a execução híbrida confirmada: ChatGPT Work e computador local. Quando o usuário solicitar no Claude com o link deste repositório, carregar as mesmas decisões e instruções; usar CLAUDE.md e docs/execucao.md quando disponíveis. Distinguir o agente do ambiente executor. Não presumir que um link instala ferramentas, transfere arquivos entre serviços ou dá acesso ao computador. Identificar recursos da sessão e executar as etapas possíveis; registrar a dependência concreta quando outra etapa precisar de ambiente diferente.
 
@@ -35,11 +39,15 @@ Respeitar a execução híbrida confirmada: ChatGPT Work e computador local. Qua
 
 Pesquisar sinais recentes ligados ao nicho. Registrar fonte, data/hora com fuso, região e janela. Buscar confirmação independente quando possível. Distinguir interesse de busca, assunto em alta numa plataforma e desempenho de um clipe.
 
+Preferir momentos cuja tração já seja observada. Registrar evidências do próprio clipe/evento: URL, criador, data de publicação, data/hora de coleta, métricas públicas disponíveis e contexto de comparação por perfil, formato e idade da publicação. Não inventar um mínimo universal de views nem transferir audiência de outro vídeo para o candidato. Tratar tema em alta e fama do participante apenas como contexto, nunca como prova de que o clipe viralizou. Se faltar evidência suficiente, registrar viralidade não confirmada e continuar procurando candidatos adequados.
+
 Não apresentar listas antigas como tendências atuais. Registrar dados indisponíveis como desconhecidos. Não prometer ranking TikTok sem acesso nem API Twitch sem autenticação configurada.
 
 ## 3. Encontrar e examinar candidatos
 
 Localizar a fonte original e registrar criador, URL e timestamps. Assistir e ouvir o trecho com contexto anterior e posterior suficiente para entender premissa, ironia, participantes e resposta. Não usar título de reupload como prova do conteúdo.
+
+Conferir que o momento contém participação real do criador e o acontecimento que motiva o corte. Em pedido de games, rejeitar candidato que só mostre trailer, publicidade ou alguém reagindo a um trailer no lugar de jogar, salvo opção explícita por esse formato. Não considerar acesso fácil ou resolução alta uma compensação por conteúdo inadequado.
 
 Identificar gancho → contexto mínimo → desenvolvimento → desfecho. Descrever por que funciona para aquele público. Rejeitar montagem que depende de distorção ou oculta uma resposta que altera o sentido.
 
@@ -49,9 +57,13 @@ Usar a matriz heurística versionada da referência de seleção. Justificar cad
 
 Quando as fichas estiverem preenchidas, usar scripts/score_candidates.py para conferir a nota, a cobertura e a escolha determinística. A CLI valida declarações estruturadas: não assiste à fonte nem comprova as evidências. Preencher context_reviewed.mode=audiovisual somente após inspeção audiovisual real.
 
+Filtrar previamente os candidatos pela adequação editorial acima. A escolha determinística da CLI não comprova formato de gameplay nem viralidade observada; uma nota alta não autoriza entregar um trailer ou rotular um momento não confirmado como já viralizado.
+
 Separar a nota de potencial das métricas observadas. Comparar tração com contexto equivalente; não inferir retenção de vídeos de terceiros. Escolher a quantidade pedida e apresentar motivos e limitações de forma breve quando fizer parte do pedido.
 
-Seguir o fluxo automático confirmado: escolher o melhor trecho entre os candidatos viáveis, editar, revisar e entregar o arquivo pronto. Fazer comparação e planejamento internamente, sem criar uma aprovação intermediária de candidatos. Mostrar opções antes de editar apenas se o usuário pedir. Se nenhum candidato viável for encontrado, ampliar a pesquisa dentro do escopo e relatar um impedimento concreto quando necessário; não substituir a entrega por uma promessa de viralidade.
+Priorizar adequação ao pedido e evidência de tração já observada antes da conveniência de download. Não apresentar um vídeo apenas promissor como se já tivesse viralizado. Manter os dados ausentes como desconhecidos e a nota como heurística, sem criar limiar arbitrário de sucesso.
+
+Seguir o fluxo automático confirmado: escolher o melhor trecho entre os candidatos viáveis, editar, revisar e entregar o arquivo pronto. Fazer comparação e planejamento internamente, sem criar uma aprovação intermediária de candidatos. Mostrar opções antes de editar apenas se o usuário pedir. Se nenhum candidato viável for encontrado, ampliar a pesquisa preservando tema e formato, e relatar um impedimento concreto quando necessário; não substituir a entrega por um trailer acessível ou uma promessa de viralidade.
 
 ## 5. Estudar e aplicar estilo
 

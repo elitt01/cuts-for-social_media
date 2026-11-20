@@ -6,16 +6,17 @@
 - Instruções compartilhadas, START_HERE.md e entrada CLAUDE.md.
 - Avaliador de candidatos com evidências, dados ausentes, intervalos de nota e elegibilidade documentados.
 - Ferramentas de preflight, probe e render com cortes múltiplos, crop geométrico, enquadramento `cover`/`contain_blur`, ASS/SRT e manifesto técnico.
-- Wrapper de transcrição opcional com faster-whisper e idioma pt/en/auto; português por padrão, sem inferência ASR real validada. Decodificação/VAD reais testados com PyAV 16.1.0.
+- Wrapper de transcrição opcional com faster-whisper e idioma pt/en/auto; português por padrão. ASR small CPU INT8 executado em duas fontes reais; precisão de fala PT-BR ainda não validada por escuta.
 - 32 testes com dados e mídia sintéticos, incluindo sincronismo, proporção visual e preservação de fontes.
-- Primeiro [teste com trailer oficial de GTA 6](teste-gta6.md): MP4 real de 23,5s preparado para avaliação do usuário; inspeção visual parcial e decodificação completa.
+- Primeiro [teste com trailer oficial de GTA 6](teste-gta6.md): rejeitado editorialmente pelo usuário; conserva validação técnica.
+- [Corte do Alanzoka](teste-alanzoka.md): 23s, 1080×1920, câmera+jogo por receita específica; tração observada, inspeção de quadros e decodificação completa. Revisão integral com áudio e avaliação do usuário pendentes.
 - Observação visual parcial de quatro publicações brasileiras oficiais; fontes, datas e limites registrados.
 
 ## Validações e capacidades ainda pendentes
 
 1. Assistir a referências atuais e a um corte real com áudio; os storyboards não substituem essa revisão.
-2. Executar inferência de transcrição com modelo disponível e avaliar nomes, gírias e timestamps em PT-BR.
-3. Completar revisão audiovisual de um corte real de live e validar a transcrição falada. O teste de trailer oficial já exercitou acesso, render e preparação de arquivo para entrega, com os limites registrados.
+2. Avaliar nomes, gírias, falantes e timestamps da transcrição em PT-BR; inferência executada não significa precisão aprovada.
+3. Completar revisão audiovisual e avaliação do corte real do Alanzoka. Não tratar o trailer rejeitado como sucesso editorial.
 4. Validar a mesma receita em uma sessão do Claude e no computador escolhido pelo usuário; portabilidade documental não comprova dependências instaladas.
 
 ## Evoluções opcionais

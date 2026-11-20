@@ -16,6 +16,8 @@ Este projeto orienta um agente com acesso às ferramentas necessárias a encontr
 | Público | Brasileiro, português brasileiro |
 | Assunto | Seguir o pedido; descobrir oportunidades em vários nichos se o pedido for aberto |
 | Fontes | Busca livre e links/arquivos enviados pelo usuário |
+| Tipo de momento | Acontecimento real de criador/streamer/famoso; em games, pessoa jogando com reação a um evento engraçado, estranho ou inesperado |
+| Evidência de viralidade | Preferir tração já observada do próprio momento, com URL, data e contexto; fama e tema em alta não bastam |
 | Destinos | TikTok, Instagram Reels e YouTube Shorts |
 | Seleção | O agente compara candidatos e escolhe o melhor viável |
 | Duração | 15–30 segundos, salvo outro pedido explícito |
@@ -27,8 +29,8 @@ Como suposições reversíveis, adotar um corte por pedido, identidade neutra e 
 
 ## Executar a tarefa
 
-1. Consultar tendências atuais quando forem relevantes, registrando URL, região, janela e data. Uma lista antiga não serve como radar atual.
-2. Localizar o material original e verificar contexto anterior/posterior. Separar o que foi assistido, lido, inferido e ainda não foi conferido.
+1. Buscar momentos reais no tema pedido, preferindo aqueles com tração já observada. Usar tendências para orientar a busca, registrando URL, região, janela e data; assunto em alta não comprova viralidade de um clipe.
+2. Localizar o material original e verificar contexto anterior/posterior. Em games, conferir que há pessoa efetivamente jogando, reação e acontecimento. Separar o que foi assistido, lido, inferido e ainda não foi conferido.
 3. Comparar candidatos com a [matriz de seleção](skills/cortes-virais-br/references/selecao.md). Uma nota organiza potencial editorial; não representa chance de viralizar.
 4. Escolher um trecho com gancho, contexto mínimo e desfecho que caiba em 15–30 segundos. Se o momento depender de contexto maior, procurar outro intervalo completo; não esconder a resposta nem acelerar a fala apenas para caber.
 5. Pesquisar referências audiovisuais do nicho e definir uma receita de edição. Seguir o [guia editorial](skills/cortes-virais-br/references/edicao-br.md), distinguindo preferências, hipóteses e observações reais.
@@ -39,6 +41,8 @@ Como suposições reversíveis, adotar um corte por pedido, identidade neutra e 
 
 Comparar candidatos e preparar a edição internamente. Mostrar uma lista para aprovação antes de editar apenas se o usuário pedir esse fluxo.
 
+Não trocar gameplay por trailer, montagem publicitária ou reação a trailer sem escolha explícita do usuário. Diante de bloqueio, buscar outra fonte ou outro candidato real preservando tema e formato; se isso não for possível, expor a limitação. O trailer de GTA 6 entregue no teste anterior foi rejeitado e conserva apenas valor de validação técnica.
+
 ## Pedido pronto para copiar
 
 ```text
@@ -47,6 +51,8 @@ Siga config/project.json e as instruções compartilhadas do projeto.
 Quero um corte pronto sobre [assunto] / deste material: [link ou arquivo].
 Se eu não definir um assunto ou uma fonte, busque uma oportunidade atual.
 Escolha o melhor trecho, edite e revise. Use 15–30 segundos por padrão.
+Busque um momento real de criador, de preferência já viralizado com evidência.
+Em games, quero a pessoa jogando com reação a um acontecimento, preservando contexto.
 Entregue o vídeo; relate apenas bloqueios concretos e verificações pendentes.
 ```
 

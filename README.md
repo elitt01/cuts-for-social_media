@@ -2,7 +2,11 @@
 
 Projeto: **Cortes Virais BR**. Repositório: [elitt01/cuts-for-social_media](https://github.com/elitt01/cuts-for-social_media). Entrada para agentes: [START_HERE.md](START_HERE.md).
 
-Base de instruções e pesquisa para um agente descobrir momentos de lives, avaliar seu potencial, editar cortes em português brasileiro e entregar o vídeo quando solicitado.
+Base de instruções e pesquisa para um agente descobrir momentos reais de criadores e lives, verificar tração já observada, editar cortes em português brasileiro e entregar o vídeo quando solicitado.
+
+Conteúdo padrão: **criador, streamer ou famoso diante de um acontecimento engraçado, estranho ou inesperado, com reação e contexto**. Em games, isso significa a pessoa efetivamente jogando. Preferir momentos cuja viralidade já tenha evidência registrada com URL, datas e contexto; fama ou tema em alta não comprovam que um clipe viralizou. Sem um limiar universal inventado de views.
+
+Trailer, compilação publicitária e reação a trailer só substituem gameplay quando o usuário escolhe explicitamente esse formato. Em bloqueio de acesso, manter tema e formato e procurar outro candidato válido, ou expor a limitação concreta.
 
 Destinos confirmados: **TikTok, Instagram Reels e YouTube Shorts**. Preparar um master e ajustar variantes quando necessário para interfaces, legendas e requisitos atuais de cada plataforma.
 
@@ -16,9 +20,9 @@ Duração padrão: **15–30 segundos**. Outro pedido explícito prevalece. Como
 
 Uso previsto: **ChatGPT Work e computador local**. Para usar no **Claude**, envie o link do repositório junto com o pedido e siga o [guia de execução](docs/execucao.md). As instruções são compartilhadas; a execução depende das ferramentas e do acesso disponíveis em cada sessão.
 
-**Estado: versão 0.3.0, com ferramentas básicas e primeiro teste de edição em mídia real.** Há scripts para pontuação de candidatos, inspeção de mídia e render com legendas; 32 testes automatizados passaram. O [teste de GTA 6](docs/teste-gta6.md) produziu 23,5s em 1080×1920 a partir de um trailer oficial. A transcrição local é opcional, com português por padrão e opções inglês/automático; a inferência de reconhecimento de fala ainda não foi executada. A pesquisa de tendências, a inspeção do conteúdo e as escolhas editoriais continuam a cargo do agente.
+**Estado: versão 0.3.1, com ferramentas básicas e primeiro corte de momento real de criador.** Os 32 testes automatizados da base passaram. O [trailer de GTA 6](docs/teste-gta6.md) foi rejeitado editorialmente pelo usuário. A correção produziu um [corte de 23s do Alanzoka](docs/teste-alanzoka.md), com câmera acima da gameplay e tração observada na publicação. ASR small foi executado em duas fontes; os textos do corte são editoriais, pois o áudio desse trecho é predominantemente musical. A precisão de transcrição PT-BR, a revisão integral com áudio e a aprovação da nova edição pelo usuário ainda não foram validadas.
 
-O pacote está organizado para uso a partir do repositório. Não houve instalação de plugin nem execução de uma sessão do Claude. O teste real tem verificação técnica e inspeção de quadros; a revisão integral com áudio permanece pendente. O arquivo foi preparado para avaliação do usuário, sem comprovação de alcance viral.
+O pacote está organizado para uso a partir do repositório. Não houve instalação de plugin nem execução de uma sessão do Claude. O novo arquivo tem verificação técnica e inspeção de quadros; a revisão integral com áudio permanece pendente. Curtidas observadas não comprovam, sozinhas, viralidade ou desempenho da edição resultante.
 
 ## Começar
 
@@ -35,8 +39,8 @@ Usar `python` se esse for o comando disponível no sistema. O exemplo de seleç�
 ## Resultado pretendido
 
 1. Identificar o pedido e escolher o nicho daquela tarefa: seguir o tema solicitado ou pesquisar oportunidades em vários nichos quando o pedido for aberto.
-2. Consultar assuntos atuais relevantes, registrando região, janela e fontes.
-3. Encontrar candidatos e assistir ao contexto da live original.
+2. Localizar momentos reais do tema, preferindo viralidade já observada e registrando URL, publicação/coleta, métricas disponíveis e contexto; usar tendências como apoio à busca.
+3. Encontrar candidatos adequados ao formato e assistir ao contexto da live original; em games, conferir pessoa jogando, reação e acontecimento.
 4. Comparar gancho, compreensão, desfecho, atualidade e qualidade audiovisual.
 5. Criar um plano com timestamps, enquadramento, legendas PT-BR, áudio e efeitos com função.
 6. Renderizar, revisar e entregar MP4 e legenda revisada quando pedidos.
@@ -61,12 +65,13 @@ A nota de potencial é uma heurística editorial, nunca uma probabilidade de vir
 | [Briefing](docs/briefing.md) | Decisões confirmadas e suposições reversíveis |
 | [Roadmap](docs/roadmap.md) | O que existe e o que falta implementar |
 | [Validação](docs/validacao.md) | Testes executados, exemplo renderizado e limites da evidência |
-| [Teste GTA 6](docs/teste-gta6.md) | Fonte oficial, receita, resultado e melhorias do primeiro teste real |
+| [Teste GTA 6](docs/teste-gta6.md) | Teste técnico com trailer rejeitado editorialmente e correções do fluxo |
+| [Corte real do Alanzoka](docs/teste-alanzoka.md) | Publicação, tração observada, receita câmera+jogo e limites de revisão |
 | [Configuração inicial](config/brief.example.json) | Defaults prontos; preencher o material e o tema da tarefa |
 | [Decisões do projeto](config/project.json) | Política de vários nichos confirmada pelo usuário |
 | [Ficha de referência](templates/referencia.example.json) | Registro de um vídeo realmente inspecionado |
 | [Plano de corte](templates/plano.example.json) | Contrato inicial para fonte, timeline, edição e QA |
-| [Exemplos](examples/README.md) | Testes sintéticos e plano do teste com trailer oficial |
+| [Exemplos](examples/README.md) | Testes sintéticos, teste de trailer rejeitado e receita do corte real |
 
 ## Edição baseada em evidências
 

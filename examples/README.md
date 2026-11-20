@@ -4,6 +4,8 @@ Os exemplos sintéticos abaixo exercitam contratos e ferramentas. Não represent
 
 O arquivo [plano.gta6-trailer.json](plano.gta6-trailer.json) é um caso separado, com fonte oficial real. Consulte o [relatório do teste](../docs/teste-gta6.md) para obter a origem, preparar a mídia local e conhecer a revisão ainda pendente. Nenhuma mídia foi incluída no Git.
 
+Após o usuário rejeitar o trailer, foi preparado um [corte real do Alanzoka](../docs/teste-alanzoka.md). A receita [render_alanzoka_radio.py](render_alanzoka_radio.py) usa crops fixos daquela fonte para câmera acima do jogo; não é um rastreador automático nem suporte genérico de `editing.overlays`.
+
 ## Avaliador
 
 ```bash

@@ -10,8 +10,9 @@ Executada em 20/11/2026, em executor Linux com Python 3.12.14 e FFmpeg/ffprobe 7
 - Probe do exemplo: vídeo H264, 720×1280, 30fps, yuv420p e áudio AAC.
 - Um quadro do exemplo foi inspecionado visualmente: duas linhas, acentos/ç, contorno e destaque legíveis. O vídeo completo com áudio não foi revisado por essa inspeção de quadro.
 - JSONs, links locais, manifesto do pacote e estrutura da skill conferidos. Mídia de teste e modelos ficam fora do Git.
-- [Teste real GTA 6](teste-gta6.md): 23,5s, 1080×1920, 30fps, H264/AAC; decodificação completa sem erro e quatro quadros finais inspecionados. Textos editoriais, sem transcrição de fala nem revisão integral com áudio.
-- faster-whisper 1.2.1 e PyAV 16.1.0: decodificação de áudio real e VAD executados. PyAV 19.0.2 falhou com `metadata_errors`; a dependência compatível foi fixada. Nenhum modelo de ASR foi baixado.
+- [Teste de trailer GTA 6](teste-gta6.md): rejeitado editorialmente pelo usuário; conserva apenas resultados técnicos.
+- [Corte real do Alanzoka](teste-alanzoka.md): 23s, 1080×1920, 30fps, H264/AAC; receita câmera+jogo executada sobre mídia real, decodificação completa sem erro e quatro quadros finais inspecionados. Textos editoriais; revisão integral com áudio pendente.
+- faster-whisper 1.2.1 e PyAV 16.1.0: decodificação de áudio real e VAD executados. PyAV 19.0.2 falhou com `metadata_errors`; a dependência compatível foi fixada. Na correção foi baixado o modelo small gratuito e executada inferência CPU INT8 em duas fontes; a precisão ainda não foi conferida por escuta.
 
 ## Casos cobertos pelos testes
 
@@ -22,7 +23,7 @@ Seleção: soma ponderada; campos desconhecidos; intervalos sem renormalização
 ## Limites da evidência
 
 - O avaliador valida a estrutura declarada pelo agente, não a veracidade de uma inspeção.
-- faster-whisper foi instalado em ambiente isolado no teste real. Decodificação e VAD não equivalem a reconhecimento de fala; não houve inferência ASR nem avaliação de precisão de legendas faladas.
+- faster-whisper foi instalado em ambiente isolado. ASR foi executado, mas não houve avaliação de precisão por escuta. No rádio, reconheceu música em inglês, sem fala PT-BR confiável; esses resultados não foram usados como legendas de diálogo.
 - O render não implementa rastreamento de rosto, composição câmera+jogo, inserção automática de memes, trilha ou efeitos. Esses elementos exigem ferramentas adicionais; campos não suportados geram erro.
 - A [pesquisa brasileira](referencias-observadas.md) observou quadros públicos de quatro publicações. Não houve áudio nem reprodução integral; as técnicas derivadas são hipóteses editoriais.
 - O manifesto técnico conserva revisão audiovisual pendente e entrega não concluída. Um agente deve verificar o corte real e sua entrega antes de mudar esses estados.

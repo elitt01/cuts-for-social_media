@@ -12,6 +12,14 @@ O resultado operacional deve dizer: “candidato com potencial alto, evidência 
 
 ## Fontes e possibilidades reais
 
+### Adequação antes da nota
+
+O padrão confirmado é um momento real de criador, streamer ou famoso diante de um acontecimento engraçado, estranho ou inesperado. Em games, conferir pessoa jogando, acontecimento e reação. Trailer, publicidade e reação a trailer não substituem gameplay sem escolha explícita do usuário. Descartar formatos incompatíveis antes de comparar notas; disponibilidade de download não compensa conteúdo errado.
+
+O usuário prefere um momento cuja repercussão já tenha sido observada. Registrar o upload exato, quem publica, quem aparece, datas e métricas disponíveis. Distinguir fanpage de conta do criador. Um embed da publicação é evidência primária de seus campos; contadores de espelhos são secundários e não devem substituir silenciosamente campos indisponíveis. Campo zero suspeito/ausente não comprova ausência de views. Publicação de um fã pode localizar o momento, mas exige rastrear o contexto e indicar sua origem.
+
+Se houver apenas tração observada sem base comparável, usar esse rótulo e continuar a busca por confirmação; não apresentar potencial ou celebridade como viralidade comprovada. Em falha de acesso, manter tema e formato e tentar outra fonte ou candidato válido. Não trocar por um trailer por ser fácil de obter.
+
 | Fonte | O que obter | Limitação importante |
 | --- | --- | --- |
 | Google Trends — Em alta, Brasil | Assuntos com crescimento recente; janela de 4h, 24h, 48h ou 7d, estado ativo/finalizado e volume em faixas. Exportação CSV/RSS descrita oficialmente. | Interesse de busca não equivale a consumo de cortes. A página tem agrupamentos de consultas; não somar variantes como assuntos independentes. |

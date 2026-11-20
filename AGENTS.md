@@ -26,6 +26,11 @@ Organizar um plugin/skill para descobrir, selecionar, editar e entregar cortes d
 ## Seleção e edição
 
 - Priorizar tema, criador ou nicho pedido na tarefa. Usar tendências para escolher oportunidades dentro desse escopo.
+- Buscar por padrão um momento real de criador, streamer ou famoso, com acontecimento engraçado, estranho ou inesperado e reação contextualizada. Em games, localizar a pessoa efetivamente jogando, com ação do jogo e reação; não reduzir o pedido ao nome do jogo.
+- Preferir um clipe cuja viralidade já tenha evidência observada. Registrar URL, publicação, data/hora da coleta, métricas disponíveis e contexto de comparação; não inventar um limiar universal de views. Distinguir tração observada de potencial editorial.
+- Não usar tema em alta, fama do participante ou views de outro vídeo como prova de que aquele momento viralizou. Se os sinais forem insuficientes, declarar viralidade não confirmada e continuar a busca dentro do formato pedido.
+- Não substituir gameplay por trailer oficial, compilação publicitária ou reação a trailer, salvo escolha explícita do usuário por esse formato. Um arquivo mais fácil de baixar não é um candidato editorial equivalente.
+- Em bloqueio de acesso, preservar tema e formato: procurar outra fonte válida do momento ou outro candidato real que atenda ao pedido. Se não houver material viável, expor a limitação concreta; não entregar um formato diferente como se atendesse ao pedido.
 - Quando o pedido for aberto, pesquisar oportunidades em vários nichos, comparar adequação e evidência e justificar a escolha. Não perguntar por um nicho fixo já dispensado pelo usuário.
 - Escolher o melhor candidato, editar, revisar e entregar pronto por padrão. Comparar candidatos internamente, sem exigir que o usuário escolha um antes da edição; respeitar um pedido explícito diferente naquela tarefa.
 - Distinguir abertura a vários nichos de misturar assuntos sem relação num mesmo corte. Adaptar referências, vocabulário, ritmo e layout ao conteúdo de cada tarefa.
@@ -49,3 +54,4 @@ Organizar um plugin/skill para descobrir, selecionar, editar e entregar cortes d
 - Validar o arquivo exportado e assistir/ouvir antes de marcar revisão completa. Se não conseguir, registrar o que ficou sem conferir.
 - Entregar ao usuário quando pedido, com caminho/link verificado. Não confundir renderização com entrega.
 - Executar verificações proporcionais. Não afirmar teste de mídia quando só houve validação documental.
+- Conferir adequação editorial antes de renderizar. O teste com trailer de GTA 6 foi rejeitado pelo usuário; sua exportação valida componentes técnicos, não o fluxo editorial nem a escolha de um clipe viral de gameplay.

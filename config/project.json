@@ -25,6 +25,20 @@
     "creator_allowlist_required": false,
     "explicit_source_takes_priority": true
   },
+  "content_policy": {
+    "default_format": "real_creator_moment",
+    "participants": ["creator", "streamer", "public_figure"],
+    "preferred_event_types": ["funny", "strange", "unexpected"],
+    "preserve_event_reaction_and_context": true,
+    "gaming": {
+      "default_format": "person_actually_playing_with_reaction_to_game_event",
+      "require_actual_gameplay": true,
+      "require_creator_reaction": true,
+      "alternatives_require_explicit_user_choice": ["official_trailer", "promotional_compilation", "reaction_to_trailer"]
+    },
+    "access_failure_policy": "preserve_requested_topic_and_format_find_valid_candidate_or_report_limitation",
+    "availability_does_not_override_editorial_fit": true
+  },
   "execution_environment": {
     "mode": "hybrid",
     "runtimes": ["chatgpt_work", "local_computer"],
@@ -42,7 +56,18 @@
     "require_candidate_choice": false,
     "edit_after_selection": true,
     "review_before_delivery": true,
-    "deliver_ready_video": true
+    "deliver_ready_video": true,
+    "prefer_already_observed_virality": true,
+    "observed_virality_evidence": {
+      "record_candidate_url_and_creator": true,
+      "record_publication_and_collection_dates": true,
+      "record_available_metrics_and_comparison_context": true,
+      "universal_view_threshold": null,
+      "trending_topic_is_not_proof": true,
+      "famous_participant_is_not_proof": true,
+      "other_video_performance_is_not_proof": true,
+      "missing_evidence_policy": "mark_unconfirmed_continue_search_or_report_limitation"
+    }
   },
   "editing_policy": {
     "mode": "adaptive_by_clip",
@@ -72,7 +97,11 @@
     { "date": "2026-11-20", "decision": "Permitir execução no ChatGPT Work e no computador local; preparar uso no Claude quando solicitado com o link do repositório." },
     { "date": "2026-11-20", "decision": "O agente deve escolher o melhor trecho, editar, revisar e entregar o vídeo pronto, sem exigir escolha prévia entre candidatos." },
     { "date": "2026-11-20", "decision": "Adaptar a edição ao clipe, usando memes e efeitos quando ajudarem." },
-    { "date": "2026-11-20", "decision": "Usar 15–30 segundos como duração padrão quando o pedido não especificar outra." }
+    { "date": "2026-11-20", "decision": "Usar 15–30 segundos como duração padrão quando o pedido não especificar outra." },
+    { "date": "2026-11-20", "decision": "Buscar momento real de criador, streamer ou famoso, com acontecimento engraçado, estranho ou inesperado; em games, pessoa jogando com reação ao evento." },
+    { "date": "2026-11-20", "decision": "Preferir clipe cuja viralidade já tenha evidência observada, com URL, datas e contexto; tema em alta ou fama não comprovam que o momento viralizou." },
+    { "date": "2026-11-20", "decision": "Não substituir gameplay por trailer, compilação publicitária ou reação a trailer sem escolha explícita; em bloqueios, preservar tema e formato e procurar outro candidato válido ou expor a limitação." },
+    { "date": "2026-11-20", "decision": "O trailer de GTA 6 entregue no teste foi rejeitado pelo usuário; conservar apenas a validação técnica, sem registrar sucesso editorial." }
   ],
   "pending_questions": [],
   "reversible_assumptions": ["Um corte por pedido quando a quantidade for omitida", "Identidade visual neutra até existir orientação de marca", "Entregar na sessão atual ou na pasta local de saída conforme o ambiente"],
