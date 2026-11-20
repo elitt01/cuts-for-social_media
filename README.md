@@ -8,6 +8,8 @@ Destinos confirmados: **TikTok, Instagram Reels e YouTube Shorts**. Preparar um 
 
 Fontes confirmadas: **busca livre + seus links e arquivos**. O agente pode descobrir candidatos sem lista fixa de criadores e deve priorizar o material que você indicar para editar.
 
+Uso previsto: **ChatGPT Work e computador local**. Para usar no **Claude**, envie o link do repositório junto com o pedido e siga o [guia de execução](docs/execucao.md). As instruções são compartilhadas; a execução depende das ferramentas e do acesso disponíveis em cada sessão.
+
 **Estado: briefing em construção.** Este repositório contém um pacote de instruções em rascunho e referências pesquisadas em 20/11/2026. Não há plugin instalado, busca automatizada, pipeline de render implementado ou corte real validado nesta versão.
 
 ## Resultado pretendido
@@ -26,6 +28,8 @@ A nota de potencial é uma heurística editorial, nunca uma probabilidade de vir
 | Arquivo | Uso |
 | --- | --- |
 | [AGENTS.md](AGENTS.md) | Regras para trabalhar neste projeto |
+| [CLAUDE.md](CLAUDE.md) | Ponto de entrada para o Claude, ligado às instruções compartilhadas |
+| [Guia de execução](docs/execucao.md) | Como iniciar no Work, no computador ou no Claude |
 | [Skill principal](skills/cortes-virais-br/SKILL.md) | Ordem de execução para o agente |
 | [Descoberta e seleção](skills/cortes-virais-br/references/selecao.md) | Pesquisa de tendências, critérios e comparação de desempenho |
 | [Edição para o Brasil](skills/cortes-virais-br/references/edicao-br.md) | Legendas, ritmo, composição, áudio, presets e estudo de referências |

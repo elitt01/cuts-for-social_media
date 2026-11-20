@@ -2,7 +2,7 @@
 Consulta: 20/11/2026. Este é um projeto de repositório para instruções de agente e ferramentas; não comprova um plugin instalado, descoberta automática funcionando ou qualidade de um vídeo final.
 
 ## Decisão recomendada
-Começar com um pacote de instruções executável no Work ou no PC: Python coordena arquivos JSON, FFmpeg corta/renderiza, faster-whisper transcreve. Navegação/pesquisa do agente gera evidências de tendências. Adicionar yt-dlp apenas para fontes que permitem ingestão; Remotion apenas quando legendas e composições animadas justificarem a manutenção.
+Começar com instruções compartilhadas e planejar ferramentas para Work e PC: Python coordenará arquivos JSON, FFmpeg fará corte/render e faster-whisper fará transcrição. Preparar uso pelo Claude quando solicitado com o link do repo, mantendo os mesmos contratos e verificando o ambiente real da sessão. Navegação/pesquisa do agente gera evidências de tendências. Adicionar yt-dlp apenas para fontes que permitem ingestão; Remotion apenas quando legendas e composições animadas justificarem a manutenção.
 
 Não criar um servidor MCP para o V1 sem necessidade concreta: uma skill orienta o agente, mas não fornece, por si, acesso a vídeos, APIs, GPU ou armazenamento. Contratos de arquivo permitem migrar para MCP depois.
 
@@ -28,12 +28,15 @@ Fontes primárias verificadas:
 - Remotion Caption: https://www.remotion.dev/docs/captions/caption
 - Licença: https://www.remotion.dev/docs/license/pricing e https://www.remotion.dev/docs/license/faq
 
-## Execução Work versus local
+## Execução Work, local e uso pelo Claude
+
+Decisão confirmada: Work e computador local. Claude é outro agente que pode usar as instruções quando o usuário pedir com o link do repo; não constitui por si só um terceiro serviço de render. Consultar docs/execucao.md a partir da raiz do projeto.
 
 | Ambiente | Uso adequado | Limitação |
 | --- | --- | --- |
 | Work com executor | Pesquisa, inspeção de arquivos anexados, scripts, transcrição/render quando dependências e recursos existem. | GPU, duração máxima de processos, espaço, downloads e rede não são garantidos. Fazer preflight por sessão. |
 | PC do usuário | Arquivos grandes locais, modelos em cache e renders demorados. | Requer Python/FFmpeg e instalação controlada; não presumir acesso do agente ao PC. |
+| Sessão do Claude | Ler o projeto e seguir a mesma receita; executar etapas se a sessão oferecer as ferramentas necessárias. | Acesso ao repo, terminal, arquivos, pesquisa e mídia devem ser conferidos; receber um link não instala dependências nem comprova render funcional. |
 | API paga / servidor | Futuro uso contínuo, escala ou integração externa. | Só acrescentar depois de definir demanda e orçamento. Não contratar ou criar infraestrutura só para guardar instruções. |
 
 Fato observado neste executor em 20/11/2026: Python 3.12.14, ffmpeg e ffprobe em /usr/bin, Node e npm disponíveis; yt-dlp não está no PATH. Não foi feita instalação nem teste de transcrição/render. Não afirmar desempenho no computador de destino a partir de benchmarks de outro hardware.
@@ -48,6 +51,7 @@ Caminhos abaixo são relativos à raiz do repositório. Um componente planejado 
 | --- | --- | --- |
 | README.md | Atual | Escopo, estado, navegação e limites |
 | AGENTS.md | Atual | Regras de trabalho e fidelidade das evidências |
+| CLAUDE.md e docs/execucao.md | Atual | Entrada do Claude e roteiro compartilhado para cada ambiente |
 | docs/briefing.md e config/project.json | Atual | Respostas e política de vários nichos |
 | docs/roadmap.md | Atual | Pendências e critérios da primeira entrega funcional |
 | skills/cortes-virais-br/SKILL.md | Atual | Orquestração da tarefa |

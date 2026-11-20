@@ -11,6 +11,7 @@ Organizar um plugin/skill para descobrir, selecionar, editar e entregar cortes d
 - Usar subagentes para tarefas independentes quando o usuário solicitar; atribuir arquivos ou escopos distintos e consolidar a revisão.
 - Não exigir aprovação rotineira entre etapas já autorizadas. Perguntar quando faltar uma escolha que realmente muda o resultado.
 - Não instalar plugin, contratar serviço ou publicar vídeos só por existir um plano no repo.
+- Atender uso no ChatGPT Work e no computador local; preparar uso no Claude quando o usuário pedir e fornecer o link do repo. Seguir docs/execucao.md e compartilhar as mesmas regras/configurações. Conferir as capacidades da sessão antes de assumir execução ou acesso a outro ambiente.
 
 ## Evidência
 

@@ -24,14 +24,26 @@
     "creator_allowlist_required": false,
     "explicit_source_takes_priority": true
   },
-  "execution_environment": null,
+  "execution_environment": {
+    "mode": "hybrid",
+    "runtimes": ["chatgpt_work", "local_computer"],
+    "resolve_runtime_per_task": true,
+    "requires_capability_check": true
+  },
+  "agent_compatibility": {
+    "targets": ["chatgpt", "claude"],
+    "claude_activation": "explicit_user_request_with_repository_link",
+    "claude_entrypoint": "CLAUDE.md",
+    "status": "instructions_prepared_execution_not_validated"
+  },
   "delivery": { "on_request": true, "publish_automatically": false },
   "paid_services_enabled": false,
   "confirmed_decisions": [
     { "date": "2026-11-20", "decision": "Atender todos os nichos, conforme tendências e o que for pedido." },
     { "date": "2026-11-20", "decision": "Usar o repositório elitt01/cuts-for-social_media fornecido pelo usuário." },
     { "date": "2026-11-20", "decision": "Preparar cortes para TikTok, Instagram Reels e YouTube Shorts." },
-    { "date": "2026-11-20", "decision": "Permitir busca livre, aceitando também links e arquivos enviados pelo usuário." }
+    { "date": "2026-11-20", "decision": "Permitir busca livre, aceitando também links e arquivos enviados pelo usuário." },
+    { "date": "2026-11-20", "decision": "Permitir execução no ChatGPT Work e no computador local; preparar uso no Claude quando solicitado com o link do repositório." }
   ],
-  "pending_questions": ["ambiente de execução", "referências de edição", "seleção", "volume e duração", "identidade e destino"]
+  "pending_questions": ["seleção", "referências de edição", "volume e duração", "identidade e destino"]
 }

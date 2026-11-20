@@ -25,6 +25,8 @@ Se houver tema, criador ou nicho pedido, dar prioridade a esse escopo e pesquisa
 
 Verificar pesquisa, acesso audiovisual, arquivos, FFmpeg/ffprobe e transcrição disponíveis. Não prometer render ou coleta completa de plataformas sem essas capacidades. Usar arquivo fornecido quando uma URL não puder ser acessada.
 
+Respeitar a execução híbrida confirmada: ChatGPT Work e computador local. Quando o usuário solicitar no Claude com o link deste repositório, carregar as mesmas decisões e instruções; usar CLAUDE.md e docs/execucao.md quando disponíveis. Distinguir o agente do ambiente executor. Não presumir que um link instala ferramentas, transfere arquivos entre serviços ou dá acesso ao computador. Identificar recursos da sessão e executar as etapas possíveis; registrar a dependência concreta quando outra etapa precisar de ambiente diferente.
+
 ## 2. Descobrir oportunidade atual
 
 Pesquisar sinais recentes ligados ao nicho. Registrar fonte, data/hora com fuso, região e janela. Buscar confirmação independente quando possível. Distinguir interesse de busca, assunto em alta numa plataforma e desempenho de um clipe.

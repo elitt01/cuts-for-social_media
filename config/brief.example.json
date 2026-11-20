@@ -9,12 +9,12 @@
   "approved_creators": [],
   "reference_urls": [],
   "style_preset": null,
-  "execution_environment": null,
+  "execution_environment": { "mode": "hybrid", "selected_runtime": null, "agent_client": null },
   "selection_mode": null,
   "count": null,
   "duration_target_seconds": { "min": null, "max": null },
   "delivery": { "formats": ["mp4", "srt"], "destination": null, "publish": false },
   "budget": { "paid_services_allowed": false },
   "assumptions": ["Sem publicação automática"],
-  "unknowns": ["referências de edição por tarefa", "ambiente de execução", "seleção", "duração", "destino"]
+  "unknowns": ["referências de edição por tarefa", "seleção", "duração", "destino"]
 }
