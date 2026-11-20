@@ -11,7 +11,7 @@
 
 ## Pendências
 
-1. Completar briefing: fontes e ambiente. Vários nichos e as três plataformas já confirmados.
+1. Completar briefing: ambiente e preferências editoriais. Vários nichos, três plataformas e busca livre com links/arquivos já confirmados.
 2. Inspecionar referências brasileiras reais com áudio; contrastar vídeos fortes e comuns.
 3. Escolher receita de edição e implementar preflight, inspeção, transcrição e render com ferramentas verificadas.
 4. Testar primeiro em mídia sintética para cortes, timelines, legendas e exportação.

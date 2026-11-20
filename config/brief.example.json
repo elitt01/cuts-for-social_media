@@ -5,7 +5,7 @@
   "niche_policy": "adaptive_by_request_and_trends",
   "requested_topic": null,
   "target_platforms": ["tiktok", "instagram_reels", "youtube_shorts"],
-  "source_policy": null,
+  "source_policy": "free_discovery_and_user_inputs",
   "approved_creators": [],
   "reference_urls": [],
   "style_preset": null,
@@ -16,5 +16,5 @@
   "delivery": { "formats": ["mp4", "srt"], "destination": null, "publish": false },
   "budget": { "paid_services_allowed": false },
   "assumptions": ["Sem publicação automática"],
-  "unknowns": ["fontes", "referências de edição por tarefa", "ambiente de execução", "seleção", "duração", "destino"]
+  "unknowns": ["referências de edição por tarefa", "ambiente de execução", "seleção", "duração", "destino"]
 }

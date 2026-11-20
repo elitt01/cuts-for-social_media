@@ -16,14 +16,22 @@
     "platform_specific_variants_when_needed": true,
     "check_current_specs_and_interface": true
   },
-  "source_policy": null,
+  "source_policy": {
+    "mode": "free_discovery_and_user_inputs",
+    "allow_discovery": true,
+    "accept_urls": true,
+    "accept_files": true,
+    "creator_allowlist_required": false,
+    "explicit_source_takes_priority": true
+  },
   "execution_environment": null,
   "delivery": { "on_request": true, "publish_automatically": false },
   "paid_services_enabled": false,
   "confirmed_decisions": [
     { "date": "2026-11-20", "decision": "Atender todos os nichos, conforme tendências e o que for pedido." },
     { "date": "2026-11-20", "decision": "Usar o repositório elitt01/cuts-for-social_media fornecido pelo usuário." },
-    { "date": "2026-11-20", "decision": "Preparar cortes para TikTok, Instagram Reels e YouTube Shorts." }
+    { "date": "2026-11-20", "decision": "Preparar cortes para TikTok, Instagram Reels e YouTube Shorts." },
+    { "date": "2026-11-20", "decision": "Permitir busca livre, aceitando também links e arquivos enviados pelo usuário." }
   ],
-  "pending_questions": ["origem dos clipes", "referências de edição", "ambiente de execução", "seleção", "volume e duração", "identidade e destino"]
+  "pending_questions": ["ambiente de execução", "referências de edição", "seleção", "volume e duração", "identidade e destino"]
 }

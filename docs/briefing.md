@@ -2,7 +2,9 @@
 
 Estado inicial: pedido de Rafael em 20/11/2026. Objetivo confirmado: criar um repositório de instruções e ferramentas para um plugin/skill encontrar momentos de lives, avaliar potencial com assuntos atuais, editar com legendas/elementos chamativos e entregar vídeo quando solicitado.
 
-Público brasileiro confirmado. Política de nichos confirmada: **todos; vários nichos conforme as tendências e o que for pedido**. O tema explícito de uma tarefa tem prioridade; pedidos abertos permitem descoberta em vários nichos. Plataformas confirmadas: **TikTok, Instagram Reels e YouTube Shorts**. Fontes e estilo específico ainda não definidos. Não presumir uma idade de audiência a partir da idade do usuário.
+Público brasileiro confirmado. Política de nichos confirmada: **todos; vários nichos conforme as tendências e o que for pedido**. O tema explícito de uma tarefa tem prioridade; pedidos abertos permitem descoberta em vários nichos. Plataformas confirmadas: **TikTok, Instagram Reels e YouTube Shorts**. Fontes confirmadas: **busca livre, aceitando também links e arquivos enviados pelo usuário**, sem lista fixa de criadores. Estilo específico ainda não definido. Não presumir uma idade de audiência a partir da idade do usuário.
+
+Quando o usuário indicar material para editar, priorizar essa fonte; distinguir material de origem de uma referência de estilo. Quando pedir descoberta, pesquisar fontes acessíveis adequadas ao tema e registrar a origem. Busca livre é uma política editorial, não uma garantia de acesso a qualquer plataforma.
 
 Preparar um master e variantes quando as interfaces, requisitos atuais ou condições de uso dos assets exigirem diferenças. Conferir legibilidade, enquadramento e música por destino; evitar renders duplicados quando o mesmo arquivo atender aos três.
 
@@ -14,7 +16,7 @@ Fazer **uma pergunta por vez**, priorizando a próxima decisão que altera o tra
 | --- | --- | --- | --- |
 | Respondido | Nichos | Vários, conforme tendências e o pedido | Adaptar descoberta e edição em cada tarefa |
 | Respondido | Plataformas | TikTok, Instagram Reels e YouTube Shorts | Conferir interfaces e exportações para as três |
-| 3 | Origem do material | Links/arquivos fornecidos; criadores escolhidos; descoberta ampla | Muda busca, acesso e contexto de uso |
+| Respondido | Origem do material | Busca livre + links e arquivos enviados pelo usuário | Descobrir oportunidades ou trabalhar sobre o material indicado |
 | 4 | Referências de edição | Exemplos apreciados e exemplos exagerados | Permite estudar estilo de verdade |
 | 5 | Ambiente de execução | Work; computador local; ambos | Muda ferramentas, downloads e render |
 | 6 | Seleção durante uma tarefa | Agente escolhe e edita; mostra opções primeiro | Define fluxo sem confirmações desnecessárias |
@@ -31,4 +33,4 @@ Fazer **uma pergunta por vez**, priorizando a próxima decisão que altera o tra
 
 ## Próxima pergunta
 
-De onde o agente deve obter os clipes: links/arquivos fornecidos, busca autônoma, criadores escolhidos ou uma combinação? Depois da resposta, registrar a política de fontes e perguntar sobre o ambiente de execução ou as referências de edição, conforme a próxima dependência.
+Onde a edição deve rodar: no ChatGPT Work, no computador do usuário ou nos dois? Essa escolha define dependências, acesso aos arquivos e execução de renders. Depois de registrar a resposta, definir as próximas escolhas editoriais que realmente alterem o resultado.

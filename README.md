@@ -6,6 +6,8 @@ Base de instruções e pesquisa para um agente descobrir momentos de lives, aval
 
 Destinos confirmados: **TikTok, Instagram Reels e YouTube Shorts**. Preparar um master e ajustar variantes quando necessário para interfaces, legendas e requisitos atuais de cada plataforma.
 
+Fontes confirmadas: **busca livre + seus links e arquivos**. O agente pode descobrir candidatos sem lista fixa de criadores e deve priorizar o material que você indicar para editar.
+
 **Estado: briefing em construção.** Este repositório contém um pacote de instruções em rascunho e referências pesquisadas em 20/11/2026. Não há plugin instalado, busca automatizada, pipeline de render implementado ou corte real validado nesta versão.
 
 ## Resultado pretendido
