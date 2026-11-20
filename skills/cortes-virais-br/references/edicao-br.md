@@ -153,7 +153,7 @@ Testar uma alteração relevante por vez em clipes comparáveis: abertura, posi�
 
 ## Lacunas atuais
 
-- Política de vários nichos confirmada. O nicho e as referências de cada tarefa dependerão do pedido; criadores e plataformas prioritárias ainda não definidos.
+- Política de vários nichos e destinos TikTok/Reels/Shorts confirmados. O nicho e as referências de cada tarefa dependerão do pedido; criadores ainda não definidos.
 - Nenhuma amostra audiovisual brasileira foi assistida nesta rodada; portanto os presets ainda não são um estilo derivado de referências observadas.
 - Não foi estabelecido um meme ou trilha específico em alta em novembro/2026. Tendências devem ser pesquisadas de novo no momento de cada tarefa.
 - Não há dados do canal para calibrar intensidade, duração, gancho ou desempenho.

@@ -4,7 +4,7 @@
   "audience": { "locale": "pt-BR", "region": "BR", "age_band": null, "interests": [] },
   "niche_policy": "adaptive_by_request_and_trends",
   "requested_topic": null,
-  "target_platforms": [],
+  "target_platforms": ["tiktok", "instagram_reels", "youtube_shorts"],
   "source_policy": null,
   "approved_creators": [],
   "reference_urls": [],
@@ -16,5 +16,5 @@
   "delivery": { "formats": ["mp4", "srt"], "destination": null, "publish": false },
   "budget": { "paid_services_allowed": false },
   "assumptions": ["Sem publicação automática"],
-  "unknowns": ["plataforma prioritária", "fontes", "referências de edição por tarefa", "ambiente de execução", "seleção", "duração", "destino"]
+  "unknowns": ["fontes", "referências de edição por tarefa", "ambiente de execução", "seleção", "duração", "destino"]
 }

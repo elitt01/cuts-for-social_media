@@ -26,6 +26,7 @@ Organizar um plugin/skill para descobrir, selecionar, editar e entregar cortes d
 - Priorizar tema, criador ou nicho pedido na tarefa. Usar tendências para escolher oportunidades dentro desse escopo.
 - Quando o pedido for aberto, pesquisar oportunidades em vários nichos, comparar adequação e evidência e justificar a escolha. Não perguntar por um nicho fixo já dispensado pelo usuário.
 - Distinguir abertura a vários nichos de misturar assuntos sem relação num mesmo corte. Adaptar referências, vocabulário, ritmo e layout ao conteúdo de cada tarefa.
+- Preparar para TikTok, Instagram Reels e YouTube Shorts por padrão. Conferir requisitos atuais, áreas ocupadas pela interface e uso dos assets por destino; criar variantes quando necessário e evitar renders idênticos duplicados.
 - Separar potencial editorial de tração observada. Usar os pesos apenas como heurísticas versionadas.
 - Comparar desempenho por plataforma, perfil, formato e idade de publicação; declarar ausência de base.
 - Preservar gancho, contexto mínimo e desfecho; não fabricar polêmica nem remover negações para mudar uma fala.

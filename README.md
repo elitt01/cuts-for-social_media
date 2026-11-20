@@ -4,6 +4,8 @@ Plugin em desenvolvimento: **Cortes Virais BR**. Repositório: [elitt01/cuts-for
 
 Base de instruções e pesquisa para um agente descobrir momentos de lives, avaliar seu potencial, editar cortes em português brasileiro e entregar o vídeo quando solicitado.
 
+Destinos confirmados: **TikTok, Instagram Reels e YouTube Shorts**. Preparar um master e ajustar variantes quando necessário para interfaces, legendas e requisitos atuais de cada plataforma.
+
 **Estado: briefing em construção.** Este repositório contém um pacote de instruções em rascunho e referências pesquisadas em 20/11/2026. Não há plugin instalado, busca automatizada, pipeline de render implementado ou corte real validado nesta versão.
 
 ## Resultado pretendido

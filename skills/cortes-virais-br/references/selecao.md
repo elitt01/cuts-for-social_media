@@ -1,6 +1,6 @@
 # Descoberta e seleção de cortes — pesquisa e proposta
 
-Consulta: 20/11/2026, America/Sao_Paulo. Escopo: público brasileiro; vários nichos conforme tendências e o pedido. Canais de origem e plataforma final ainda não definidos pelo usuário.
+Consulta: 20/11/2026, America/Sao_Paulo. Escopo: público brasileiro; vários nichos conforme tendências e o pedido; TikTok, Instagram Reels e YouTube Shorts. Canais de origem ainda não definidos pelo usuário.
 
 ## O que o agente deve distinguir
 

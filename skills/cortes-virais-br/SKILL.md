@@ -17,6 +17,8 @@ Consultar [seleção](references/selecao.md) para descoberta/ranking, [edição]
 
 Identificar tema/nicho da tarefa, público, plataformas, fontes, quantidade, duração, estilo e local de entrega conforme o pedido. Separar respostas do usuário de defaults experimentais.
 
+Adotar TikTok, Instagram Reels e YouTube Shorts como destinos confirmados, salvo escopo diferente em uma tarefa. Conferir requisitos e interface atuais de cada destino; manter um master e produzir variantes quando houver diferença real de enquadramento, legendas, áudio ou assets. Não exigir novamente a escolha de plataforma nem presumir licença de música válida entre plataformas.
+
 Se houver tema, criador ou nicho pedido, dar prioridade a esse escopo e pesquisar oportunidades relevantes dentro dele. Se o pedido for aberto, descobrir oportunidades em vários nichos e selecionar pela evidência atual, qualidade do momento e adequação ao público; justificar a escolha. Não usar só o ranking geral de buscas como critério. Não interpretar vários nichos como obrigação de misturar assuntos sem relação em um vídeo.
 
 Verificar pesquisa, acesso audiovisual, arquivos, FFmpeg/ffprobe e transcrição disponíveis. Não prometer render ou coleta completa de plataformas sem essas capacidades. Usar arquivo fornecido quando uma URL não puder ser acessada.

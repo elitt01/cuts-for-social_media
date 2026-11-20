@@ -2,7 +2,9 @@
 
 Estado inicial: pedido de Rafael em 20/11/2026. Objetivo confirmado: criar um repositório de instruções e ferramentas para um plugin/skill encontrar momentos de lives, avaliar potencial com assuntos atuais, editar com legendas/elementos chamativos e entregar vídeo quando solicitado.
 
-Público brasileiro confirmado. Política de nichos confirmada: **todos; vários nichos conforme as tendências e o que for pedido**. O tema explícito de uma tarefa tem prioridade; pedidos abertos permitem descoberta em vários nichos. Fontes, plataforma prioritária e estilo específico ainda não definidos. Não presumir uma idade de audiência a partir da idade do usuário.
+Público brasileiro confirmado. Política de nichos confirmada: **todos; vários nichos conforme as tendências e o que for pedido**. O tema explícito de uma tarefa tem prioridade; pedidos abertos permitem descoberta em vários nichos. Plataformas confirmadas: **TikTok, Instagram Reels e YouTube Shorts**. Fontes e estilo específico ainda não definidos. Não presumir uma idade de audiência a partir da idade do usuário.
+
+Preparar um master e variantes quando as interfaces, requisitos atuais ou condições de uso dos assets exigirem diferenças. Conferir legibilidade, enquadramento e música por destino; evitar renders duplicados quando o mesmo arquivo atender aos três.
 
 Repositório fornecido pelo usuário: https://github.com/elitt01/cuts-for-social_media . Visibilidade pública observada em 20/11/2026; preservar essa configuração.
 
@@ -11,7 +13,7 @@ Fazer **uma pergunta por vez**, priorizando a próxima decisão que altera o tra
 | Ordem | Decisão | Opções iniciais sugeridas | Por que muda o resultado |
 | --- | --- | --- | --- |
 | Respondido | Nichos | Vários, conforme tendências e o pedido | Adaptar descoberta e edição em cada tarefa |
-| 2 | Plataforma prioritária | TikTok; Reels; Shorts; exportar para as três | Muda interface, duração e avaliação |
+| Respondido | Plataformas | TikTok, Instagram Reels e YouTube Shorts | Conferir interfaces e exportações para as três |
 | 3 | Origem do material | Links/arquivos fornecidos; criadores escolhidos; descoberta ampla | Muda busca, acesso e contexto de uso |
 | 4 | Referências de edição | Exemplos apreciados e exemplos exagerados | Permite estudar estilo de verdade |
 | 5 | Ambiente de execução | Work; computador local; ambos | Muda ferramentas, downloads e render |
@@ -29,4 +31,4 @@ Fazer **uma pergunta por vez**, priorizando a próxima decisão que altera o tra
 
 ## Próxima pergunta
 
-Qual será a plataforma prioritária: TikTok, Reels, Shorts ou as três? Depois da resposta, registrar a escolha e perguntar pela origem dos clipes, se ainda não estiver definida.
+De onde o agente deve obter os clipes: links/arquivos fornecidos, busca autônoma, criadores escolhidos ou uma combinação? Depois da resposta, registrar a política de fontes e perguntar sobre o ambiente de execução ou as referências de edição, conforme a próxima dependência.
