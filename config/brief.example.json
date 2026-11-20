@@ -1,0 +1,20 @@
+{
+  "schema_version": "0.1.0",
+  "status": "awaiting_context",
+  "audience": { "locale": "pt-BR", "region": "BR", "age_band": null, "interests": [] },
+  "niche_policy": "adaptive_by_request_and_trends",
+  "requested_topic": null,
+  "target_platforms": [],
+  "source_policy": null,
+  "approved_creators": [],
+  "reference_urls": [],
+  "style_preset": null,
+  "execution_environment": null,
+  "selection_mode": null,
+  "count": null,
+  "duration_target_seconds": { "min": null, "max": null },
+  "delivery": { "formats": ["mp4", "srt"], "destination": null, "publish": false },
+  "budget": { "paid_services_allowed": false },
+  "assumptions": ["Sem publicação automática"],
+  "unknowns": ["plataforma prioritária", "fontes", "referências de edição por tarefa", "ambiente de execução", "seleção", "duração", "destino"]
+}

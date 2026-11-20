@@ -1,0 +1,23 @@
+{
+  "schema_version": "0.1.0",
+  "status": "blank_template",
+  "reference_url": null,
+  "creator": null,
+  "platform": null,
+  "niche": null,
+  "published_at": null,
+  "observed_at": null,
+  "full_video_watched_with_audio": false,
+  "duration_seconds": null,
+  "public_metrics": { "views": null, "likes": null, "comments": null },
+  "opening": { "description": null, "first_useful_information_seconds": null },
+  "payoff": { "description": null, "at_seconds": null },
+  "timeline_observations": [],
+  "caption_observations": {},
+  "composition_observations": {},
+  "audio_observations": {},
+  "estimated_parameters": {},
+  "hypotheses": [],
+  "unavailable_information": [],
+  "techniques_to_reproduce": []
+}

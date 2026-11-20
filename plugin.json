@@ -1,0 +1,20 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "cortes-virais-br",
+  "version": "0.1.0",
+  "description": "Rascunho de instruções para pesquisa, seleção, edição e entrega de cortes de lives em português brasileiro. Requer briefing e ferramentas no ambiente executor.",
+  "author": { "name": "Rafael" },
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Cortes Virais BR",
+        "shortDescription": "Cortes de lives em português",
+        "longDescription": "Orienta a pesquisa de tendências, avaliação de momentos, edição contextual e QA de cortes de lives. A base ainda depende do briefing e de validação com mídia real; não inclui servidor nem publica vídeos automaticamente.",
+        "developerName": "Rafael",
+        "category": "Productivity",
+        "capabilities": [],
+        "defaultPrompt": "Ajude a encontrar, avaliar e editar um corte de live para meu público, usando fontes atuais, contexto completo e um estilo definido por referências."
+      }
+    }
+  }
+}

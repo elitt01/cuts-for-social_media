@@ -1,0 +1,23 @@
+{
+  "schema_version": "0.1.0",
+  "project": "cuts-for-social_media",
+  "repository_url": "https://github.com/elitt01/cuts-for-social_media",
+  "audience": { "locale": "pt-BR", "region": "BR", "age_band": null },
+  "niche_policy": {
+    "mode": "adaptive_by_request_and_trends",
+    "fixed_niche": null,
+    "user_request_takes_priority": true,
+    "open_requests_allow_cross_niche_discovery": true,
+    "adapt_style_and_references_per_task": true
+  },
+  "target_platforms": [],
+  "source_policy": null,
+  "execution_environment": null,
+  "delivery": { "on_request": true, "publish_automatically": false },
+  "paid_services_enabled": false,
+  "confirmed_decisions": [
+    { "date": "2026-11-20", "decision": "Atender todos os nichos, conforme tendências e o que for pedido." },
+    { "date": "2026-11-20", "decision": "Usar o repositório elitt01/cuts-for-social_media fornecido pelo usuário." }
+  ],
+  "pending_questions": ["plataforma prioritária", "origem dos clipes", "referências de edição", "ambiente de execução", "seleção", "volume e duração", "identidade e destino"]
+}

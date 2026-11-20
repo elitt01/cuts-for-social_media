@@ -1,0 +1,27 @@
+# Mídia, modelos e resultados privados ficam fora do repositório.
+*.mp4
+*.mov
+*.mkv
+*.webm
+*.mp3
+*.wav
+*.flac
+*.srt
+*.ass
+*.vtt
+*.zip
+*.tar.gz
+media/
+models/
+runs/
+outputs/
+transcripts/
+.env
+.env.*
+!.env.example
+cookies*.txt
+*.log
+__pycache__/
+.venv/
+node_modules/
+.DS_Store
