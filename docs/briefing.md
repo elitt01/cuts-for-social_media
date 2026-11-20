@@ -8,6 +8,8 @@ Quando o usuário indicar material para editar, priorizar essa fonte; distinguir
 
 Execução confirmada: **ChatGPT Work e computador local**, conforme o pedido e os recursos disponíveis. Preparar também o uso pelo **Claude quando o usuário pedir e fornecer o link do repositório**. Compartilhar instruções e decisões; verificar em cada sessão acesso aos arquivos, pesquisa e ferramentas de mídia. Claude identifica o agente; a capacidade de executar vídeo depende do ambiente usado nessa sessão.
 
+Fluxo confirmado: **o agente escolhe o melhor trecho, edita, revisa e entrega pronto**. A comparação entre candidatos é interna; não criar uma etapa obrigatória de escolha do usuário antes da edição. Um pedido explícito para mostrar opções pode alterar esse comportamento naquela tarefa. Se faltar uma dependência real, relatar o bloqueio específico e continuar as etapas possíveis, sem fingir que o vídeo foi produzido.
+
 Preparar um master e variantes quando as interfaces, requisitos atuais ou condições de uso dos assets exigirem diferenças. Conferir legibilidade, enquadramento e música por destino; evitar renders duplicados quando o mesmo arquivo atender aos três.
 
 Repositório fornecido pelo usuário: https://github.com/elitt01/cuts-for-social_media . Visibilidade pública observada em 20/11/2026; preservar essa configuração.
@@ -21,7 +23,7 @@ Fazer **uma pergunta por vez**, priorizando a próxima decisão que altera o tra
 | Respondido | Origem do material | Busca livre + links e arquivos enviados pelo usuário | Descobrir oportunidades ou trabalhar sobre o material indicado |
 | 4 | Referências de edição | Exemplos apreciados e exemplos exagerados | Permite estudar estilo de verdade |
 | Respondido | Ambiente e agentes | ChatGPT Work e computador; Claude sob pedido com o link do repo | Mesmas decisões, ferramentas verificadas em cada sessão |
-| 6 | Seleção durante uma tarefa | Agente escolhe e edita; mostra opções primeiro | Define fluxo sem confirmações desnecessárias |
+| Respondido | Seleção durante uma tarefa | Agente escolhe o melhor, edita, revisa e entrega pronto | Comparação interna, sem aprovação intermediária de candidatos |
 | 7 | Volume e duração | Um corte por pedido ou lote; duração aproximada | Define esforço e ritmo adequado |
 | 8 | Identidade e entrega | Sem marca ou identidade própria; MP4/SRT; destino | Define acabamento e arquivo final |
 
@@ -35,4 +37,4 @@ Fazer **uma pergunta por vez**, priorizando a próxima decisão que altera o tra
 
 ## Próxima pergunta
 
-O agente deve escolher e editar o corte sozinho, mostrar candidatos antes da edição ou seguir o modo especificado em cada pedido? Essa decisão define se existe uma etapa de escolha do usuário entre descoberta e render.
+Como deve ser a intensidade da edição quando o pedido não definir um estilo: adaptada ao clipe com liberdade para efeitos, mais limpa ou sempre intensa? Depois, fechar os defaults de duração e entrega que ainda mudarem o resultado.

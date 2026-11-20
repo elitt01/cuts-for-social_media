@@ -8,7 +8,7 @@ Esta versão fornece instruções compartilhadas e um ponto de entrada. O pipeli
 
 1. Ler [AGENTS.md](../AGENTS.md), [README.md](../README.md), [config/project.json](../config/project.json) e a [skill principal](../skills/cortes-virais-br/SKILL.md).
 2. Identificar se a tarefa é descobrir, selecionar, editar material fornecido ou entregar um resultado existente.
-3. Aplicar as decisões confirmadas: vários nichos; TikTok/Reels/Shorts; busca livre com links e arquivos do usuário.
+3. Aplicar as decisões confirmadas: vários nichos; TikTok/Reels/Shorts; busca livre com links e arquivos do usuário; escolher o melhor trecho, editar, revisar e entregar pronto sem exigir escolha intermediária de candidatos.
 4. Conferir capacidades reais: leitura da fonte e contexto, áudio/vídeo, terminal, dependências, espaço e modo de entregar arquivos.
 5. Executar as etapas autorizadas que forem possíveis. Registrar uma dependência concreta quando outra etapa precisar de recursos ausentes.
 

@@ -36,6 +36,13 @@
     "claude_entrypoint": "CLAUDE.md",
     "status": "instructions_prepared_execution_not_validated"
   },
+  "selection_policy": {
+    "mode": "automatic_best_candidate",
+    "require_candidate_choice": false,
+    "edit_after_selection": true,
+    "review_before_delivery": true,
+    "deliver_ready_video": true
+  },
   "delivery": { "on_request": true, "publish_automatically": false },
   "paid_services_enabled": false,
   "confirmed_decisions": [
@@ -43,7 +50,8 @@
     { "date": "2026-11-20", "decision": "Usar o repositório elitt01/cuts-for-social_media fornecido pelo usuário." },
     { "date": "2026-11-20", "decision": "Preparar cortes para TikTok, Instagram Reels e YouTube Shorts." },
     { "date": "2026-11-20", "decision": "Permitir busca livre, aceitando também links e arquivos enviados pelo usuário." },
-    { "date": "2026-11-20", "decision": "Permitir execução no ChatGPT Work e no computador local; preparar uso no Claude quando solicitado com o link do repositório." }
+    { "date": "2026-11-20", "decision": "Permitir execução no ChatGPT Work e no computador local; preparar uso no Claude quando solicitado com o link do repositório." },
+    { "date": "2026-11-20", "decision": "O agente deve escolher o melhor trecho, editar, revisar e entregar o vídeo pronto, sem exigir escolha prévia entre candidatos." }
   ],
-  "pending_questions": ["seleção", "referências de edição", "volume e duração", "identidade e destino"]
+  "pending_questions": ["referências de edição", "volume e duração", "identidade e destino"]
 }

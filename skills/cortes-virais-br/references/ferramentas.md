@@ -74,7 +74,7 @@ Não versionar MP4s de lives, chaves, cookies, modelos ou transcrições pessoai
 
 1. **Brief.** Capturar o tema da tarefa, público, plataformas-alvo, fonte própria/autorizada ou de terceiros, quantidade, duração, estilo e orçamento. Respeitar a política de vários nichos: seguir o pedido ou descobrir oportunidades quando aberto. Continuar pesquisa independente enquanto faltam preferências; não fabricar uma identidade editorial.
 2. **Radar.** Registrar consulta, região BR, janela temporal, hora da coleta e fontes. Guardar também ausência de dados. Separar novidade, velocidade observada e adequação ao público.
-3. **Busca.** Apresentar candidatos com URL original, criador, timestamps, fala relevante, motivo, confiança e estado de acesso. Comparar sinais dentro de contexto semelhante, sem tratar views totais como chance futura.
+3. **Busca.** Registrar candidatos com URL original, criador, timestamps, fala relevante, motivo, confiança e estado de acesso. Comparar internamente e avançar para o melhor trecho sem exigir escolha do usuário; apresentar opções antes da edição somente quando isso for pedido. Comparar sinais dentro de contexto semelhante, sem tratar views totais como chance futura.
 4. **Inspeção.** Assistir/ouvir candidato, incluindo margem antes/depois. Só carimbar visto quando mídia foi realmente inspecionada. Transcrição sozinha não prova enquadramento, ironia, contexto ou reação.
 5. **Seleção.** Escolher arco completo: promessa, contexto mínimo, momento e resolução. Rejeitar título que contradiz a fala; registrar o que foi preservado.
 6. **Ingestão.** Priorizar arquivo original oferecido pelo usuário ou download autorizado. Se URL falhar, registrar erro e usar arquivo fornecido, sem contornar controles de acesso.

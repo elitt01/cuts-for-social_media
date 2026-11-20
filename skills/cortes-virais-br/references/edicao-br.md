@@ -97,7 +97,7 @@ Todos os valores são **defaults experimentais**. Duração deve acompanhar o ar
 | Ritmo | Retirar tempos mortos, preservar raciocínio | Preservar preparação e pausa da piada | Preservar progressão até o resultado |
 | Câmera + conteúdo | Crop guiado pelo falante | Priorizar a reação no momento certo | Começar testando câmera com 25–35% da altura e jogo no restante; alterar conforme ação e legibilidade |
 
-Não assumir que letras amarelas, zoom contínuo ou determinado meme constituem um estilo brasileiro universal. O preset aprovado deve surgir da combinação de nicho, gosto do usuário, inspeção de referências e resultados.
+Não assumir que letras amarelas, zoom contínuo ou determinado meme constituem um estilo brasileiro universal. O preset adotado deve surgir da combinação de nicho, gosto do usuário, inspeção de referências e resultados. O agente pode escolhê-lo no fluxo automático sem criar uma etapa obrigatória de aprovação para cada vídeo.
 
 ## Como estudar referências brasileiras de verdade
 

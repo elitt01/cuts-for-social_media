@@ -8,6 +8,8 @@ Destinos confirmados: **TikTok, Instagram Reels e YouTube Shorts**. Preparar um 
 
 Fontes confirmadas: **busca livre + seus links e arquivos**. O agente pode descobrir candidatos sem lista fixa de criadores e deve priorizar o material que você indicar para editar.
 
+Fluxo confirmado: **escolher o melhor trecho → editar → revisar → entregar pronto**. A seleção entre candidatos é feita pelo agente, sem exigir uma aprovação antes de editar, salvo pedido diferente naquela tarefa.
+
 Uso previsto: **ChatGPT Work e computador local**. Para usar no **Claude**, envie o link do repositório junto com o pedido e siga o [guia de execução](docs/execucao.md). As instruções são compartilhadas; a execução depende das ferramentas e do acesso disponíveis em cada sessão.
 
 **Estado: briefing em construção.** Este repositório contém um pacote de instruções em rascunho e referências pesquisadas em 20/11/2026. Não há plugin instalado, busca automatizada, pipeline de render implementado ou corte real validado nesta versão.

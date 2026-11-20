@@ -45,11 +45,13 @@ Usar a matriz heurística versionada da referência de seleção. Justificar cad
 
 Separar a nota de potencial das métricas observadas. Comparar tração com contexto equivalente; não inferir retenção de vídeos de terceiros. Escolher a quantidade pedida e apresentar motivos e limitações de forma breve quando fizer parte do pedido.
 
+Seguir o fluxo automático confirmado: escolher o melhor trecho entre os candidatos viáveis, editar, revisar e entregar o arquivo pronto. Fazer comparação e planejamento internamente, sem criar uma aprovação intermediária de candidatos. Mostrar opções antes de editar apenas se o usuário pedir. Se nenhum candidato viável for encontrado, ampliar a pesquisa dentro do escopo e relatar um impedimento concreto quando necessário; não substituir a entrega por uma promessa de viralidade.
+
 ## 5. Estudar e aplicar estilo
 
 Estudar referências audiovisuais reais do nicho e formato escolhidos para aquela tarefa antes de afirmar que reproduz um estilo. Manter fichas por tipo de conteúdo, sem transferir automaticamente ritmo e efeitos de gameplay para entrevista ou notícia. Registrar técnicas e timing; extrair parâmetros próprios sem copiar identidade ou inventar nomes de fontes tipográficas.
 
-Usar presets conversa, humor ou gameplay apenas como defaults experimentais até haver referência aprovada. Preservar ação e reação. Usar zoom, meme, música e texto quando contribuírem para compreensão ou efeito narrativo.
+Usar presets conversa, humor ou gameplay como defaults experimentais, refinando-os com referências realmente inspecionadas para a tarefa. O agente pode selecionar essas referências; não exigir aprovação de estilo em cada corte. Preservar ação e reação. Usar zoom, meme, música e texto quando contribuírem para compreensão ou efeito narrativo.
 
 Transcrever PT-BR, revisar nomes/gírias/negações e sincronizar na timeline de saída. Conservar a transcrição bruta e o mapeamento de cortes para corrigir sincronismo.
 

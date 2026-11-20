@@ -12,7 +12,7 @@
 
 ## Pendências
 
-1. Completar preferências editoriais e seleção. Vários nichos, três plataformas, fontes e execução híbrida com Claude sob pedido já confirmados.
+1. Completar preferências editoriais, duração e entrega. Vários nichos, três plataformas, fontes, execução híbrida e seleção/edição automáticas já confirmados.
 2. Inspecionar referências brasileiras reais com áudio; contrastar vídeos fortes e comuns.
 3. Escolher receita de edição e implementar preflight, inspeção, transcrição e render com ferramentas verificadas.
 4. Testar primeiro em mídia sintética para cortes, timelines, legendas e exportação; conferir os mesmos contratos nos ambientes de execução escolhidos.
