@@ -10,6 +10,8 @@ Fontes confirmadas: **busca livre + seus links e arquivos**. O agente pode desco
 
 Fluxo confirmado: **escolher o melhor trecho → editar → revisar → entregar pronto**. A seleção entre candidatos é feita pelo agente, sem exigir uma aprovação antes de editar, salvo pedido diferente naquela tarefa.
 
+Edição confirmada: **adaptar ao clipe, usando memes e efeitos quando ajudarem**. O agente pesquisa referências por conta própria e também pode usar exemplos enviados pelo usuário; a intensidade deve preservar fala, contexto e desfecho.
+
 Uso previsto: **ChatGPT Work e computador local**. Para usar no **Claude**, envie o link do repositório junto com o pedido e siga o [guia de execução](docs/execucao.md). As instruções são compartilhadas; a execução depende das ferramentas e do acesso disponíveis em cada sessão.
 
 **Estado: briefing em construção.** Este repositório contém um pacote de instruções em rascunho e referências pesquisadas em 20/11/2026. Não há plugin instalado, busca automatizada, pipeline de render implementado ou corte real validado nesta versão.

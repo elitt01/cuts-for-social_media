@@ -43,6 +43,13 @@
     "review_before_delivery": true,
     "deliver_ready_video": true
   },
+  "editing_policy": {
+    "mode": "adaptive_by_clip",
+    "memes": "when_helpful",
+    "effects": "when_helpful",
+    "reference_selection": "agent_research_with_optional_user_examples",
+    "preserve_context_speech_and_payoff": true
+  },
   "delivery": { "on_request": true, "publish_automatically": false },
   "paid_services_enabled": false,
   "confirmed_decisions": [
@@ -51,7 +58,9 @@
     { "date": "2026-11-20", "decision": "Preparar cortes para TikTok, Instagram Reels e YouTube Shorts." },
     { "date": "2026-11-20", "decision": "Permitir busca livre, aceitando também links e arquivos enviados pelo usuário." },
     { "date": "2026-11-20", "decision": "Permitir execução no ChatGPT Work e no computador local; preparar uso no Claude quando solicitado com o link do repositório." },
-    { "date": "2026-11-20", "decision": "O agente deve escolher o melhor trecho, editar, revisar e entregar o vídeo pronto, sem exigir escolha prévia entre candidatos." }
+    { "date": "2026-11-20", "decision": "O agente deve escolher o melhor trecho, editar, revisar e entregar o vídeo pronto, sem exigir escolha prévia entre candidatos." },
+    { "date": "2026-11-20", "decision": "Adaptar a edição ao clipe, usando memes e efeitos quando ajudarem." }
   ],
-  "pending_questions": ["referências de edição", "volume e duração", "identidade e destino"]
+  "pending_questions": ["duração padrão"],
+  "optional_preferences": ["referências enviadas pelo usuário", "quantidade por pedido", "identidade visual", "destino alternativo de entrega"]
 }

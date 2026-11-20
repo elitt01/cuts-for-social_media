@@ -8,7 +8,8 @@
   "source_policy": "free_discovery_and_user_inputs",
   "approved_creators": [],
   "reference_urls": [],
-  "style_preset": null,
+  "style_preset": "adaptive_by_clip",
+  "reference_selection": "agent_research_with_optional_user_examples",
   "execution_environment": { "mode": "hybrid", "selected_runtime": null, "agent_client": null },
   "selection_mode": "automatic_best_candidate",
   "count": null,
@@ -16,5 +17,6 @@
   "delivery": { "formats": ["mp4", "srt"], "destination": null, "publish": false },
   "budget": { "paid_services_allowed": false },
   "assumptions": ["Sem publicação automática"],
-  "unknowns": ["referências de edição por tarefa", "duração", "destino"]
+  "unknowns": ["duração", "destino"],
+  "research_needed": ["referências audiovisuais atuais do nicho escolhido na tarefa"]
 }

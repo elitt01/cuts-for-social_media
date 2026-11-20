@@ -33,6 +33,7 @@ Organizar um plugin/skill para descobrir, selecionar, editar e entregar cortes d
 - Comparar desempenho por plataforma, perfil, formato e idade de publicação; declarar ausência de base.
 - Preservar gancho, contexto mínimo e desfecho; não fabricar polêmica nem remover negações para mudar uma fala.
 - Derivar estilo de referências realmente inspecionadas do nicho. Não chamar presets genéricos de estilo brasileiro validado.
+- Adaptar a edição ao clipe, com memes e efeitos quando contribuírem para o resultado. Pesquisar referências por conta própria; exemplos do usuário são opcionais, não uma condição para iniciar.
 - Fazer cada efeito ter uma função narrativa; preservar fala, ação do jogo, reações e pausas relevantes.
 - Revisar nomes, gírias, acentos e sincronismo das legendas PT-BR.
 - Conservar mapeamento de tempo da fonte para a saída após cortes, repetições ou mudanças de velocidade.

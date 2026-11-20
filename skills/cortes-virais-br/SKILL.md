@@ -49,6 +49,8 @@ Seguir o fluxo automático confirmado: escolher o melhor trecho entre os candida
 
 ## 5. Estudar e aplicar estilo
 
+Aplicar a política confirmada: adaptar a edição ao clipe e usar memes/efeitos quando ajudarem. Ajustar intensidade ao nicho, à ação e ao momento, sem impor efeitos frequentes por padrão. Pesquisar referências de edição autonomamente; aceitar exemplos do usuário quando fornecidos, sem torná-los uma exigência para começar.
+
 Estudar referências audiovisuais reais do nicho e formato escolhidos para aquela tarefa antes de afirmar que reproduz um estilo. Manter fichas por tipo de conteúdo, sem transferir automaticamente ritmo e efeitos de gameplay para entrevista ou notícia. Registrar técnicas e timing; extrair parâmetros próprios sem copiar identidade ou inventar nomes de fontes tipográficas.
 
 Usar presets conversa, humor ou gameplay como defaults experimentais, refinando-os com referências realmente inspecionadas para a tarefa. O agente pode selecionar essas referências; não exigir aprovação de estilo em cada corte. Preservar ação e reação. Usar zoom, meme, música e texto quando contribuírem para compreensão ou efeito narrativo.

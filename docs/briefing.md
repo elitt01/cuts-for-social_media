@@ -2,7 +2,9 @@
 
 Estado inicial: pedido de Rafael em 20/11/2026. Objetivo confirmado: criar um repositório de instruções e ferramentas para um plugin/skill encontrar momentos de lives, avaliar potencial com assuntos atuais, editar com legendas/elementos chamativos e entregar vídeo quando solicitado.
 
-Público brasileiro confirmado. Política de nichos confirmada: **todos; vários nichos conforme as tendências e o que for pedido**. O tema explícito de uma tarefa tem prioridade; pedidos abertos permitem descoberta em vários nichos. Plataformas confirmadas: **TikTok, Instagram Reels e YouTube Shorts**. Fontes confirmadas: **busca livre, aceitando também links e arquivos enviados pelo usuário**, sem lista fixa de criadores. Estilo específico ainda não definido. Não presumir uma idade de audiência a partir da idade do usuário.
+Público brasileiro confirmado. Política de nichos confirmada: **todos; vários nichos conforme as tendências e o que for pedido**. O tema explícito de uma tarefa tem prioridade; pedidos abertos permitem descoberta em vários nichos. Plataformas confirmadas: **TikTok, Instagram Reels e YouTube Shorts**. Fontes confirmadas: **busca livre, aceitando também links e arquivos enviados pelo usuário**, sem lista fixa de criadores. Edição confirmada: **adaptar ao clipe, usando memes e efeitos quando ajudarem**. Não presumir uma idade de audiência a partir da idade do usuário.
+
+O agente deve pesquisar referências de edição por conta própria, como solicitado no pedido inicial. Exemplos enviados pelo usuário podem orientar o estilo, mas não são uma dependência obrigatória para iniciar. Distinguir a preferência editorial confirmada de um estilo brasileiro comprovado: a inspeção audiovisual de referências reais continua necessária e ainda está pendente nesta versão.
 
 Quando o usuário indicar material para editar, priorizar essa fonte; distinguir material de origem de uma referência de estilo. Quando pedir descoberta, pesquisar fontes acessíveis adequadas ao tema e registrar a origem. Busca livre é uma política editorial, não uma garantia de acesso a qualquer plataforma.
 
@@ -21,11 +23,11 @@ Fazer **uma pergunta por vez**, priorizando a próxima decisão que altera o tra
 | Respondido | Nichos | Vários, conforme tendências e o pedido | Adaptar descoberta e edição em cada tarefa |
 | Respondido | Plataformas | TikTok, Instagram Reels e YouTube Shorts | Conferir interfaces e exportações para as três |
 | Respondido | Origem do material | Busca livre + links e arquivos enviados pelo usuário | Descobrir oportunidades ou trabalhar sobre o material indicado |
-| 4 | Referências de edição | Exemplos apreciados e exemplos exagerados | Permite estudar estilo de verdade |
+| Respondido | Edição | Adaptada ao clipe; memes e efeitos quando ajudarem | Pesquisar referências do nicho e variar intensidade conforme o momento |
 | Respondido | Ambiente e agentes | ChatGPT Work e computador; Claude sob pedido com o link do repo | Mesmas decisões, ferramentas verificadas em cada sessão |
 | Respondido | Seleção durante uma tarefa | Agente escolhe o melhor, edita, revisa e entrega pronto | Comparação interna, sem aprovação intermediária de candidatos |
-| 7 | Volume e duração | Um corte por pedido ou lote; duração aproximada | Define esforço e ritmo adequado |
-| 8 | Identidade e entrega | Sem marca ou identidade própria; MP4/SRT; destino | Define acabamento e arquivo final |
+| Pendente | Duração padrão | Faixa fixa ou duração adaptada ao trecho | Define ritmo e extensão do arco |
+| Opcional | Volume, identidade e destino alternativo | Seguir cada pedido; usar defaults reversíveis quando omitidos | Evitar bloquear o fluxo por preferências opcionais |
 
 ## Suposições reversíveis iniciais
 
@@ -37,4 +39,4 @@ Fazer **uma pergunta por vez**, priorizando a próxima decisão que altera o tra
 
 ## Próxima pergunta
 
-Como deve ser a intensidade da edição quando o pedido não definir um estilo: adaptada ao clipe com liberdade para efeitos, mais limpa ou sempre intensa? Depois, fechar os defaults de duração e entrega que ainda mudarem o resultado.
+Quando o usuário não definir a duração, usar uma faixa fixa ou adaptar ao tempo necessário para o trecho funcionar? Quantidade, identidade visual e destino alternativo podem ser definidos em cada pedido; não transformar essas preferências opcionais em etapas obrigatórias de aprovação.

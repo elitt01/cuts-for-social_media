@@ -6,6 +6,8 @@ Pesquisa consultada em **20/11/2026**. Este documento distingue orientação ofi
 
 Construir a edição em torno de uma situação compreensível e de uma reação ou conclusão que compense a atenção. Legendas legíveis, enquadramento que preserve a ação e cortes com função devem vir antes de efeitos. Escolher um perfil de edição por contexto e validar com referências brasileiras do nicho e resultados do canal. Não prometer viralidade nem assumir que mais efeitos aumentam alcance.
 
+Preferência confirmada pelo usuário em 20/11/2026: **adaptar ao clipe, usando memes e efeitos quando ajudarem**. Essa é uma decisão editorial do projeto, não uma medição do gosto do público brasileiro. O agente deve selecionar e estudar referências por conta própria, aceitando exemplos opcionais do usuário.
+
 ## O que as fontes sustentam
 
 | Evidência | Achado e limite | Fonte |
@@ -101,7 +103,7 @@ Não assumir que letras amarelas, zoom contínuo ou determinado meme constituem 
 
 ## Como estudar referências brasileiras de verdade
 
-1. Identificar o nicho daquela tarefa e os criadores de origem, respeitando a política de atender vários nichos. Não exigir um nicho permanente. Pedir 3–5 vídeos cujo estilo o usuário aprecia e 1–2 que considera exagerados quando essa preferência for necessária, ou encontrar amostra pública comparável se ele delegar.
+1. Identificar o nicho daquela tarefa e os criadores de origem, respeitando a política de atender vários nichos. Encontrar amostra pública comparável autonomamente. Se o usuário trouxer exemplos, incluí-los na análise; não bloquear a tarefa exigindo referências pessoais nem um nicho permanente.
 2. Montar amostra de 12–20 cortes do mesmo nicho e plataforma, com datas recentes, diferentes criadores e desempenho alto **e comum**. Não selecionar só sucessos; considerar duração e tempo desde a publicação. Tamanhos são proposta de pesquisa, não cálculo estatístico de representatividade.
 3. Assistir a cada vídeo inteiro com áudio; rever abertura, payoff e transições. Capturar quadros apenas como apoio: quadros isolados não revelam ritmo, sincronização, volume ou timing de humor.
 4. Para cada referência, registrar URL, data de publicação, data/hora da observação, plataforma, duração, credencial de autorização quando aplicável e métricas públicas realmente visíveis. Usar `null` quando ausentes.
